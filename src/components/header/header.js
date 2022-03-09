@@ -81,6 +81,7 @@ const styles = {
     '.connect_wallet__btn': {
       background: 'linear-gradient(90.19deg, #2CD4FF -16.46%, #5979FF 24.09%, #A662FF 99.83%)',
       borderRadius: '30px',
+      border: 'none',
       height: '60px',
       fontSize: '18px',
       fontWeight: '700',

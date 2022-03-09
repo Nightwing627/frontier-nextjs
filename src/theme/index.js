@@ -5,11 +5,12 @@ export default {
     text_secondary: '#02073E', // secondary body color
     heading: '#244886', // primary heading color
     heading_secondary: '#0F2137', // heading color
+    button_color: '#5B6EF5', // normal button color
     background: '#FFFFFF', // body background color
     background_secondary: '#F9FBFD', // secondary background color
     border_color: '#E5ECF4', // border color
     primary: '#1F3E76', // primary button and link color
-    secondary: '#25CB9E', // secondary color - can be used for hover states
+    secondary: '#717579', // secondary color - can be used for hover states
     muted: '#7B8188', // muted color
     accent: '#609', // a contrast color for emphasizing UI
     yellow: '#F6C416',
@@ -161,11 +162,12 @@ export default {
     },
     heroSecondary: {
       color: '#121E31',
-      fontSize: [2, 3, 4, '17px', null, 3, '19px', 4],
-      lineHeight: [2, null, null, null, 2.2],
+      fontSize: [2, 3, 4, '17px', null, 3, '18px', '18px'],
+      lineHeight: [2, null, null, null, '28px'],
       fontWeight: 'body',
       pr: [0, null, null, null, null, '100px', null, '125px'],
       mb: ['35px', null, null, null, '40px', null, null, 7],
+      mt: '2.8rem',
     },
     title: {
       // extends the text.heading styles
@@ -229,11 +231,12 @@ export default {
     }, // default variant for MenuButton
     // you can reference other values defined in the theme
     defaultBtn: {
-      borderRadius: '45px',
-      fontSize: ['14px', 1, null, null, 2],
+      boxShadow: '0px 10px 40px rgba(132, 133, 255, 0.35)',
+      borderRadius: '40px',
+      fontFamily: 'mazzard-h-bold',
+      fontSize: ['18px', 1, null, null, '18px'],
       letterSpacings: ['-0.5px', null, null, null, '-0.15px'],
       padding: ['11px 20px 10px', null, null, null, '13px 30px'],
-      fontFamily: 'body',
       cursor: 'pointer',
       lineHeight: 1.2,
       transition: 'all 0.25s',
@@ -253,10 +256,15 @@ export default {
     whiteButton: {
       variant: 'buttons.defaultBtn',
       color: 'heading_secondary',
+      height: '60px',
+      border: '1px solid black',
       bg: 'white',
       '&:hover': {
         boxShadow: 'rgba(0, 0, 0, 0.5) 0px 12px 24px -10px',
       },
+      px: 30,
+      ml: [1, 2],
+      
     },
     secondary: {
       variant: 'buttons.defaultBtn',
@@ -268,15 +276,19 @@ export default {
         color: 'heading_secondary',
       },
     },
-    textButton: {
+    normalButton: {
       variant: 'buttons.defaultBtn',
-      backgroundColor: 'transparent',
       color: 'white',
+      bg: 'button_color',
       display: 'flex',
       alignItems: 'center',
+      height: '60px',
       svg: {
-        fontSize: [4, 6],
-        mr: 2,
+        fontSize: [4, 4],
+        ml: 2,
+      },
+      '&:hover': {
+        boxShadow: 'rgba(0, 0, 0, 0.5) 0px 12px 24px -10px',
       },
     },
   },

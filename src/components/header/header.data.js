@@ -5,7 +5,7 @@ export default [
   },
   {
     path: 'feature',
-    label: 'News',
+    label: 'Social',
   },
   {
     path: 'testimonial',
