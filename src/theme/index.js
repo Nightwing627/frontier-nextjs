@@ -14,6 +14,7 @@ export default {
     muted: '#7B8188', // muted color
     accent: '#609', // a contrast color for emphasizing UI
     yellow: '#F6C416',
+    section_bg_color: '#F4F5F7',
 
     // highlight	a background color for highlighting text
     modes: {
@@ -37,7 +38,7 @@ export default {
   ],
   fonts: {
     body: "'DM Sans', sans-serif",
-    heading: "'DM Sans', sans-serif",
+    heading: "mazzard-h-bold",
   },
   fontSizes: [12, 15, 16, 18, 20, 22, 24, 28, 32, 36, 42, 48, 52, 64],
   fontWeights: {
@@ -116,8 +117,8 @@ export default {
     mt: -1,
     marginBottom: ['50px', null, '60px', null, '65px', '75px'],
     title: {
-      fontSize: ['24px', null, '28px', null, null, '32px', null, '36px'],
-      color: 'heading_secondary',
+      fontSize: ['24px', null, '32px', null, null, '42px', null, '50px'],
+      color: '#080A12',
       lineHeight: [1.3, null, null, 1.2],
       textAlign: 'center',
       fontWeight: '700',
@@ -125,14 +126,17 @@ export default {
     },
 
     subTitle: {
-      fontSize: [0, null, '14px'],
-      color: 'heading',
+      fontSize: [0, null, '16px'],
+      color: '#121E31',
       textAlign: 'center',
       letterSpacing: ['1.5px', null, '2px'],
       textTransform: 'uppercase',
       fontWeight: '700',
+      mt: '40px',
       mb: '8px',
-      lineHeight: 1.5,
+      lineHeight: '28px',
+      pl: ['5%', '6%', '8%', '10%', '13%', '15%'],
+      pr: ['5%', '6%', '8%', '10%', '13%', '15%'],
     },
   },
   text: {

@@ -5,7 +5,7 @@ import theme from 'theme';
 import SEO from 'components/seo';
 import Layout from 'components/layout';
 import Banner from 'sections/banner';
-import KeyFeature from 'sections/key-feature';
+import CryptoTrading from 'sections/crypto-trading';
 import CoreFeature from 'sections/core-feature';
 import Feature from 'sections/feature';
 import PartnerSection from 'sections/partner';
@@ -22,7 +22,7 @@ export default function IndexPage() {
         <Layout>
           <SEO title="Frontier" />
           <Banner />
-          <KeyFeature />
+          <CryptoTrading />
           <CoreFeature />
           <Feature />
           <PartnerSection />

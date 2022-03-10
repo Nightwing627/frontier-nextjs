@@ -1,52 +1,78 @@
 /** @jsx jsx */
-import { jsx, Image, Box, Heading, Text } from 'theme-ui';
+import { jsx, Image, Box, Heading, Text, Card, Slider, Flex } from 'theme-ui';
+
+import Group from 'assets/group.png'
+import Calendar from 'assets/calendar.png'
 
 export default function FeatureCardColumn({
-  src,
-  altText = 'default alt text',
-  title,
-  text,
-}) {
+  data: { type, title, imgSrc, altText, process, raised, days, user}
+,}) {
   return (
-    <Box sx={styles.card}>
-      <Image src={src} alt={altText} sx={styles.img} />
-
-      <Box sx={styles.wrapper}>
-        <Heading sx={styles.wrapper.title}>{title}</Heading>
-        <Text sx={styles.wrapper.subTitle}>{text}</Text>
+    <Card sx={styles.CardBox}>
+      <>
+        <Image src={imgSrc} alt={altText} />
+      </>
+      <Box sx={styles.CardBox.card}>
+        <Text as="p" sx={styles.CardBox.type}>{type}</Text>
+        <Heading as="p" sx="sectionHeader">
+          {title} </Heading>
+        <Slider defaultValue={process} />
+        <Box sx={styles.wrapper}>
+          <Flex>
+            <Image src={Group}/>
+            <Text as="p">Total Raised $ {raised}</Text>
+          </Flex>
+          <Flex>
+            <Image src={Calendar}/>
+            <Text as="p">{days} Days left</Text>
+          </Flex>
+          <Flex>
+            <div className="card-footer">
+              <div className="image">
+                <Image src={user.avatar} alt="Client Image" />
+              </div>
+              <div className="reviewer-info">
+                <Heading as="h4" sx={styles.heading}>
+                  {user.name}
+                </Heading>
+                <Text>{user.address}</Text>
+              </div>
+            </div>
+          </Flex>
+        </Box>
       </Box>
-    </Box>
+    </Card>
   );
 }
 
 const styles = {
-  card: {
-    display: 'flex',
-    alignItems: 'flex-start',
-    textAlign: 'center',
-    flexDirection: 'column',
+  CardBox: {
+    background: 'antiquewhite',
+    borderRadius: 10,
+    ml: [0, null, null, 0],
+    position: 'relative',
+    mt: ['40px', null, null, 0],
+    p: 0,
+    '@media screen and (min-width: 420px) and (max-width: 767px)': {
+      maxWidth: '380px',
+    },
+    card: {
+      display: 'flex',
+      flexDirection: 'column',
+      px: '1rem',
+      pb: '20px',
+    },
+    type: {
+      fontFamily: 'mazzard-h-bold',
+      color: '#1B8271',
+      fontSize: '18px',
+    },
   },
+  
   img: {
     mx: 'auto',
     mb: [3, null, 4, null, null, 5],
     width: ['80px', '90px', null, null, null, '100px', 'auto'],
   },
-  wrapper: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    title: {
-      fontSize: [3, null, null, null, null, 4],
-      color: 'heading_secondary',
-      lineHeight: 1.4,
-      fontWeight: 700,
-      mb: [2, null, null, null, null, 3],
-    },
-
-    subTitle: {
-      fontSize: 1,
-      fontWeight: 400,
-      lineHeight: [1.85, null, null, 1.9, 2],
-    },
-  },
+  
 };

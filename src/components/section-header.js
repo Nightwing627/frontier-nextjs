@@ -1,28 +1,24 @@
 import React from 'react';
 import { Box, Text, Heading } from 'theme-ui';
 
-export default function SectionHeader({ title, slogan, isWhite }) {
-  return (
-    <Box sx={{ variant: 'sectionHeader' }}>
-      <Text
-        as="p"
-        sx={{
-          variant: 'sectionHeader.subTitle',
-          color: isWhite ? 'white' : 'heading',
-          opacity: isWhite ? 0.7 : 1,
-        }}
-      >
-        {slogan}
-      </Text>
-      <Heading
-        as="h2"
-        sx={{
-          variant: 'sectionHeader.title',
-          color: isWhite ? 'white' : 'heading_secondary',
-        }}
-      >
-        {title}
-      </Heading>
-    </Box>
-  );
+export default function Header({ title, description }) {
+    return (
+        <Box
+            variant="sectionHeader">
+            <Heading 
+                as="h2"
+                variant="sectionHeader.title">
+                {title}
+            </Heading>
+            <Text 
+                as="p"
+                variant="sectionHeader.subTitle">
+                {description}
+            </Text>
+        </Box>
+    );
+}
+
+const styles = {
+
 }
