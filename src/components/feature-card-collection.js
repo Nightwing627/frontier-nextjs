@@ -65,6 +65,7 @@ const styles = {
       mt: ['18px', '18px', '18px', '18px', '18px', '18px', null, 0],
       ml: ['0px', '0px', '0px', '0px', '0px', '0px', null, 0],
       cursor: 'pointer',
+      background: 'transparent',
     }
   },
 };

@@ -6,14 +6,10 @@ import SEO from 'components/seo';
 import Layout from 'components/layout';
 import Banner from 'sections/banner';
 import CryptoTrading from 'sections/crypto-trading';
-import CoreFeature from 'sections/core-feature';
-import Feature from 'sections/feature';
-import PartnerSection from 'sections/partner';
-import WorkFlow from 'sections/workflow';
-import TestimonialCard from 'sections/testimonial';
-import SecurePayment from 'sections/secure-payment';
-import Package from 'sections/package';
-import Faq from 'sections/faq';
+import BackProject from 'sections/back-project';
+import Category from 'sections/category';
+import CryptoReview from 'sections/crypto-review';
+import Subscribe from 'sections/subscribe';
 
 export default function IndexPage() {
   return (
@@ -23,14 +19,10 @@ export default function IndexPage() {
           <SEO title="Frontier" />
           <Banner />
           <CryptoTrading />
-          <CoreFeature />
-          <Feature />
-          <PartnerSection />
-          <WorkFlow />
-          <TestimonialCard />
-          <SecurePayment />
-          <Package />
-          <Faq />
+          <BackProject />
+          <Category />
+          <CryptoReview />
+          <Subscribe />
         </Layout>
       </StickyProvider>
     </ThemeProvider>

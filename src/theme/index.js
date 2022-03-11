@@ -3,7 +3,7 @@ export default {
   colors: {
     text: '#121E31', // body color and primary color
     text_secondary: '#02073E', // secondary body color
-    heading: '#244886', // primary heading color
+    heading: '#1B8271', // primary heading color
     heading_secondary: '#0F2137', // heading color
     button_color: '#5B6EF5', // normal button color
     background: '#FFFFFF', // body background color
@@ -87,7 +87,7 @@ export default {
   },
   section: {
     keyFeature: {
-      py: [8, null, 9, null, null, 10],
+      py: [8, null, 9, null, null, 9],
     },
     feature: {
       py: [8, null, 9, null, null, 10],
@@ -115,7 +115,7 @@ export default {
     flexDirection: 'column',
     alignItems: 'center',
     mt: -1,
-    marginBottom: ['50px', null, '60px', null, '65px', '75px'],
+    marginBottom: ['50px', null, '60px', null, '65px', '70px'],
     title: {
       fontSize: ['24px', null, '32px', null, null, '42px', null, '50px'],
       color: '#080A12',
@@ -129,8 +129,7 @@ export default {
       fontSize: [0, null, '16px'],
       color: '#121E31',
       textAlign: 'center',
-      letterSpacing: ['1.5px', null, '2px'],
-      textTransform: 'uppercase',
+      letterSpacing: ['1.5px', null, '0px'],
       fontWeight: '700',
       mt: '40px',
       mb: '8px',

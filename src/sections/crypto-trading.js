@@ -111,7 +111,7 @@ const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 
 export default function CryptoTrading() {
   return (
-    <section sx={styles.section} id="feature">
+    <section sx={styles.section} id="crypto-trading">
       <Container>
         <SectionHeader
           title="Find it first on Crypto Trading."
@@ -158,10 +158,12 @@ const styles = {
         '50px 28px',
       ],
       gridTemplateColumns: [
+        null,
         'repeat(1, 1fr)',
-        null,
         'repeat(2, 1fr)',
-        null,
+        'repeat(2, 1fr)',
+        'repeat(2, 1fr)',
+        'repeat(2, 1fr)',
         'repeat(4, 1fr)',
       ],
     },
