@@ -1,0 +1,170 @@
+
+/* Mazzard Fonts */
+@font-face {
+    font-family:"mazzard-h-black";
+    src:url("./Mazzard/MazzardH-Black.otf") format("woff"),
+    url("./Mazzard/MazzardH-Black.otf") format("opentype"),
+    url("./Mazzard/MazzardH-Black.otf") format("truetype");
+}
+
+@font-face{
+    font-family:"mazzard-h-black-italic";
+    src:url("./Mazzard/MazzardH-BlackItalic.otf") format("woff"),
+    url("./Mazzard/MazzardH-BlackItalic.otf") format("opentype"),
+    url("./Mazzard/MazzardH-BlackItalic.otf") format("truetype");
+}
+
+@font-face{
+    font-family:"mazzard-h-bold";
+    src:url("./Mazzard/MazzardH-Bold.otf") format("woff"),
+    url("./Mazzard/MazzardH-Bold.otf") format("opentype"),
+    url("./Mazzard/MazzardH-Bold.otf") format("truetype");
+}
+
+@font-face{
+    font-family:"mazzard-h-bold-italic";
+    src:url("./Mazzard/MazzardH-BoldItalic.otf") format("woff"),
+    url("./Mazzard/MazzardH-BoldItalic.otf") format("opentype"),
+    url("./Mazzard/MazzardH-BoldItalic.otf") format("truetype");
+}
+
+@font-face{
+    font-family:"mazzard-h-extrabold";
+    src:url("./Mazzard/MazzardH-ExtraBold.otf") format("woff"),
+    url("./Mazzard/MazzardH-ExtraBold.otf") format("opentype"),
+    url("./Mazzard/MazzardH-ExtraBold.otf") format("truetype");
+}
+
+@font-face{
+    font-family:"mazzard-h-extrabold-italic";
+    src:url("./Mazzard/MazzardH-ExtraBoldItalic.otf") format("woff"),
+    url("./Mazzard/MazzardH-ExtraBoldItalic.otf") format("opentype"),
+    url("./Mazzard/MazzardH-ExtraBoldItalic.otf") format("truetype");
+}
+
+@font-face{
+    font-family:"mazzard-h-extralight";
+    src:url("./Mazzard/MazzardH-ExtraLight.otf") format("woff"),
+    url("./Mazzard/MazzardH-ExtraLight.otf") format("opentype"),
+    url("./Mazzard/MazzardH-ExtraLight.otf") format("truetype");
+}
+
+
+/* Poppins Fonts */
+@font-face {
+    font-family:"poppins";
+    src:url("./Poppins/Poppins-Regular.otf") format("woff"),
+    url("./Poppins/Poppins-Regular.otf") format("opentype"),
+    url("./Poppins/Poppins-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family:"poppins-italic";
+    src:url("./Poppins/Poppins-Italic.otf") format("woff"),
+    url("./Poppins/Poppins-Italic.otf") format("opentype"),
+    url("./Poppins/Poppins-Italic.otf") format("truetype");
+}
+
+@font-face {
+    font-family:"poppins-light";
+    src:url("./Poppins/Poppins-Light.otf") format("woff"),
+    url("./Poppins/Poppins-Light.otf") format("opentype"),
+    url("./Poppins/Poppins-Light.otf") format("truetype");
+}
+@font-face {
+    font-family:"poppins-light-italic";
+    src:url("./Poppins/Poppins-LightItalic.otf") format("woff"),
+    url("./Poppins/Poppins-LightItalic.otf") format("opentype"),
+    url("./Poppins/Poppins-LightItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family:"poppins-medium";
+    src:url("./Poppins/Poppins-Medium.otf") format("woff"),
+    url("./Poppins/Poppins-Medium.otf") format("opentype"),
+    url("./Poppins/Poppins-Medium.otf") format("truetype");
+}
+@font-face {
+    font-family:"poppins-medium-italic";
+    src:url("./Poppins/Poppins-MediumItalic.otf") format("woff"),
+    url("./Poppins/Poppins-MediumItalic.otf") format("opentype"),
+    url("./Poppins/Poppins-MediumItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family:"poppins-sbold";
+    src:url("./Poppins/Poppins-SemiBold.otf") format("woff"),
+    url("./Poppins/Poppins-SemiBold.otf") format("opentype"),
+    url("./Poppins/Poppins-SemiBold.otf") format("truetype");
+}
+@font-face {
+    font-family:"poppins-sbold-italic";
+    src:url("./Poppins/Poppins-SemiBoldItalic.otf") format("woff"),
+    url("./Poppins/Poppins-SemiBoldItalic.otf") format("opentype"),
+    url("./Poppins/Poppins-SemiBoldItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family:"poppins-thin";
+    src:url("./Poppins/Poppins-Thin.otf") format("woff"),
+    url("./Poppins/Poppins-Thin.otf") format("opentype"),
+    url("./Poppins/Poppins-Thin.otf") format("truetype");
+}
+@font-face {
+    font-family:"poppins-thin-italic";
+    src:url("./Poppins/Poppins-ThinItalic.otf") format("woff"),
+    url("./Poppins/Poppins-ThinItalic.otf") format("opentype"),
+    url("./Poppins/Poppins-ThinItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family:"poppins-black";
+    src:url("./Poppins/Poppins-Black.otf") format("woff"),
+    url("./Poppins/Poppins-Black.otf") format("opentype"),
+    url("./Poppins/Poppins-Black.otf") format("truetype");
+}
+@font-face {
+    font-family:"poppins-black-italic";
+    src:url("./Poppins/Poppins-BlackItalic.otf") format("woff"),
+    url("./Poppins/Poppins-BlackItalic.otf") format("opentype"),
+    url("./Poppins/Poppins-BlackItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family:"poppins-bold";
+    src:url("./Poppins/Poppins-Bold.otf") format("woff"),
+    url("./Poppins/Poppins-Bold.otf") format("opentype"),
+    url("./Poppins/Poppins-Bold.otf") format("truetype");
+}
+@font-face {
+    font-family:"poppins-bold-italic";
+    src:url("./Poppins/Poppins-BoldItalic.otf") format("woff"),
+    url("./Poppins/Poppins-BoldItalic.otf") format("opentype"),
+    url("./Poppins/Poppins-BoldItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family:"poppins-extra-bold";
+    src:url("./Poppins/Poppins-ExtraBold.otf") format("woff"),
+    url("./Poppins/Poppins-ExtraBold.otf") format("opentype"),
+    url("./Poppins/Poppins-ExtraBold.otf") format("truetype");
+}
+@font-face {
+    font-family:"poppins-extra-bold-italic";
+    src:url("./Poppins/Poppins-ExtraBoldItalic.otf") format("woff"),
+    url("./Poppins/Poppins-ExtraBoldItalic.otf") format("opentype"),
+    url("./Poppins/Poppins-ExtraBoldItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family:"poppins-extra-light";
+    src:url("./Poppins/Poppins-ExtraLight.otf") format("woff"),
+    url("./Poppins/Poppins-ExtraLight.otf") format("opentype"),
+    url("./Poppins/Poppins-ExtraLight.otf") format("truetype");
+}
+@font-face {
+    font-family:"poppins-extra-light-italic";
+    src:url("./Poppins/Poppins-ExtraLightItalic.otf") format("woff"),
+    url("./Poppins/Poppins-ExtraLightItalic.otf") format("opentype"),
+    url("./Poppins/Poppins-ExtraLightItalic.otf") format("truetype");
+}

@@ -263,6 +263,7 @@ export default {
       height: '60px',
       border: '1px solid black',
       bg: 'white',
+      alignItems: 'center',
       '&:hover': {
         boxShadow: 'rgba(0, 0, 0, 0.5) 0px 12px 24px -10px',
       },
@@ -393,6 +394,35 @@ export default {
       position: 'absolute !important',
       width: '1px !important',
       whiteSpace: 'nowrap !important',
+    },
+  },
+  cardTitle: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    mt: -1,
+    marginBottom: ['50px', null, '60px', null, '65px', '75px'],
+    title: {
+      fontSize: ['24px', null, '32px', null, null, '42px', null, '50px'],
+      color: '#080A12',
+      lineHeight: [1.3, null, null, 1.2],
+      textAlign: 'center',
+      fontWeight: '700',
+      letterSpacing: '-.5px',
+    },
+
+    subTitle: {
+      fontSize: [0, null, '16px'],
+      color: '#121E31',
+      textAlign: 'center',
+      letterSpacing: ['1.5px', null, '2px'],
+      textTransform: 'uppercase',
+      fontWeight: '700',
+      mt: '40px',
+      mb: '8px',
+      lineHeight: '28px',
+      pl: ['5%', '6%', '8%', '10%', '13%', '15%'],
+      pr: ['5%', '6%', '8%', '10%', '13%', '15%'],
     },
   },
 };

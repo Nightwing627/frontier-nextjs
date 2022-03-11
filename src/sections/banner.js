@@ -59,7 +59,7 @@ export default function Banner() {
               Learn More <FaArrowRight />
             </Button>
             
-            <Button variant="whiteButton" aria-label="Watch Video">
+            <Button variant="whiteButton" aria-label="Donate">
               Donate
             </Button>
           </Flex>
