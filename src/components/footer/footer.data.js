@@ -1,98 +1,85 @@
 export default [
   {
-    header: 'About Us',
+    header: "Explore",
     items: [
       {
-        path: '/',
-        label: 'Support Center',
+        path: "/",
+        label: "Why Crypto Funding",
       },
       {
-        path: '/',
-        label: 'Customer Support',
+        path: "/",
+        label: "Enterprise",
       },
       {
-        path: '/',
-        label: 'About Us',
+        path: "/",
+        label: "Customer Story",
       },
       {
-        path: '/',
-        label: 'Copyright',
+        path: "/",
+        label: "Security",
       },
       {
-        path: '/',
-        label: 'Popular Campaign',
+        path: "/",
+        label: "Pricing",
       },
     ],
   },
   {
-    header: 'Our Information',
+    header: "Resources",
     items: [
       {
-        path: '/',
-        label: 'Return Policy ',
+        path: "/",
+        label: "Download",
       },
       {
-        path: '/',
-        label: 'Privacy Policy',
+        path: "/",
+        label: "Help Center",
       },
       {
-        path: '/',
-        label: 'Terms & Conditions',
+        path: "/",
+        label: "Events",
       },
       {
-        path: '/',
-        label: 'Site Map',
+        path: "/",
+        label: "Guides",
       },
       {
-        path: '/',
-        label: 'Store Hours',
+        path: "/",
+        label: "Partner",
+      },
+      {
+        path: "/",
+        label: "Directories",
       },
     ],
   },
   {
-    header: 'My Account',
+    header: "Company",
     items: [
       {
-        path: '/',
-        label: 'Press inquiries',
+        path: "/",
+        label: "About us",
       },
       {
-        path: '/',
-        label: 'Social media ',
+        path: "/",
+        label: "Contact us",
       },
       {
-        path: '/',
-        label: 'directories',
+        path: "/",
+        label: "Products",
       },
       {
-        path: '/',
-        label: 'Images & B-roll',
+        path: "/",
+        label: "Login",
       },
       {
-        path: '/',
-        label: 'Permissions',
+        path: "/",
+        label: "Sign Up",
+      },
+      {
+        path: "/",
+        label: "FAQ",
       },
     ],
   },
-  {
-    header: 'Policy',
-    items: [
-      {
-        path: '/',
-        label: 'Application security',
-      },
-      {
-        path: '/',
-        label: 'Software principles',
-      },
-      {
-        path: '/',
-        label: 'Unwanted software policy',
-      },
-      {
-        path: '/',
-        label: 'Responsible supply chain',
-      },
-    ],
-  },
-];
+]
