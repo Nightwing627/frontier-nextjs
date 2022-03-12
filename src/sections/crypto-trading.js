@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Container, Grid } from 'theme-ui';
+import { useRouter } from 'next/router'
 import SectionHeader from '../components/section-header';
 import FeatureCardColumn from 'components/feature-card-column.js';
 import FeatureCardCollection from 'components/feature-card-collection.js';
@@ -110,6 +111,7 @@ const data_2 = [
 const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip';
 
 export default function CryptoTrading() {
+  const pathname = useRouter().pathname;
   return (
     <section sx={styles.section} id="crypto-trading">
       <Container>
@@ -125,14 +127,16 @@ export default function CryptoTrading() {
             />
           ))}
         </Grid>
-
-        <Grid sx={styles.grid.second}>
+        {pathname == '/' && 
+          <Grid sx={styles.grid.second}>
           {data_2.map((item) => (
             <FeatureCardCollection
               data={item} key={item.id}
             />
           ))}
         </Grid>
+        }
+        
       </Container>
     </section>
   );

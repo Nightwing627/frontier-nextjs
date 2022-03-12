@@ -109,13 +109,13 @@ const styles = {
       mb: '40px'
     },
     contentBox: {
-      width: ['100%', null, '85%', '55%', '50%', '55%'],
+      width: ['100%', null, '88%', '70%', '70%', '55%'],
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
       flexShrink: 0,
-      pt: [0, null, null, null, null, null, 5, 10],
-      ml: ['2%', '2%', '4%', '5%', '6%', '6%']
+      pt: [0, null, null, 8, 8, null, 5, 10],
+      ml: ['2%', '2%', '4%', '8%', '10%', '6%']
     },
     imageBox: {
       display: ['none', 'none', null, null, null, 'block'],

@@ -1,33 +1,31 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Button, Image } from 'theme-ui';
 import { keyframes } from '@emotion/core';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
+import { useRouter } from 'next/router'
+import Link from "next/link";
 import Logo from 'components/logo';
-import LogoDark from 'assets/logo-dark.svg';
 import LogoWhite from 'assets/logo.svg';
-import WalletIcon from 'assets/wallet.svg';
 import MetaMask from 'assets/metamask.svg';
+import User from 'assets/user.png';
 import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 
 export default function Header({ className }) {
-  return (
+  const pathname = useRouter().pathname;
+  
+  return (  
     <DrawerProvider>
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
           <Logo src={className === 'sticky' ? LogoWhite : LogoWhite} />
 
           <Flex as="nav" sx={styles.nav}>
-            {menuItems.map(({ path, label }, i) => (
+            {menuItems.map(({ path, label, link }, i) => (
               <Link
-                activeClass="active"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
+                href={link}
+                key={path}
               >
                 {label}
               </Link>
@@ -41,12 +39,19 @@ export default function Header({ className }) {
           >
             Connect to Wallet
           </Button>
-          <Button
-            className="wallet__btn"
-            variant="secondary"
-            aria-label="Wallet"
+          {pathname == '/' ? 
+            <Button
+              sx={styles.header.walletBtn}
+              aria-label="Wallet"
+            >
+            </Button> :
+            <Button
+              sx={styles.header.userBtn}
+              aria-label="Profile"
           >
           </Button>
+        }
+          
           <MobileDrawer />
         </Container>
       </header>
@@ -88,17 +93,28 @@ const styles = {
       mr: [15, 20, null, null, 0],
       ml: ['auto', null, null, null, 0],
     },
-    '.wallet__btn': {
+    walletBtn: {
+      bg: '#fef3e7',
+      backgroundImage: `url(${MetaMask})`,
       width: '60px',
       height: '60px',
       borderRadius: '50%',
-      backgroundColor: '#fef3e7',
-      backgroundImage: `url(${MetaMask})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: '35px',
       backgroundPosition: 'center',
       ml: 2,
     },
+    userBtn: {
+      backgroundImage: `url(${User})`,
+      width: '60px',
+      height: '60px',
+      borderRadius: '50%',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '60px',
+      backgroundPosition: 'center',
+      ml: 2,
+      bg: 'transparent',
+    },    
     '&.sticky': {
       position: 'fixed',
       backgroundColor: 'background',
