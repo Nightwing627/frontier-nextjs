@@ -1,6 +1,16 @@
 /** @jsx jsx */
 import { jsx, Heading, Box, Container, Text } from "theme-ui"
 import { Link } from "components/link"
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaYoutube,
+  FaLinkedin,
+  FaInstagram,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+} from "react-icons/fa"
+import { HiOutlineMail } from "react-icons/hi"
 import Logo from "components/logo"
 import LogoWhite from "assets/logo_bottom.svg"
 import menuItems from "./footer.data"
@@ -17,14 +27,22 @@ export default function Footer() {
               Crypto Funding Website lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             </p>
-            <div>
+            <div className="social-items">
               <Link path="/">
-                <i className="fa-brands fa-facebook-f"></i>
+                <FaFacebookF />
               </Link>
-              <Link path="/">twitter</Link>
-              <Link path="/">media</Link>
-              <Link path="/">linkedin</Link>
-              <Link path="/">instagram</Link>
+              <Link path="/">
+                <FaTwitter />
+              </Link>
+              <Link path="/">
+                <FaYoutube />
+              </Link>
+              <Link path="/">
+                <FaLinkedin />
+              </Link>
+              <Link path="/">
+                <FaInstagram />
+              </Link>
             </div>
           </Box>
 
@@ -48,10 +66,15 @@ export default function Footer() {
             <Heading sx={styles.footer.heading}>Get in Touch with Us</Heading>
             <nav>
               <Link sx={styles.footer.link}>
-                832 Thompson Drive, San Fransisco CA 94107, United States
+                <FaMapMarkerAlt /> 832 Thompson Drive, San Fransisco CA 94107,
+                United States
               </Link>
-              <Link sx={styles.footer.link}> 394-091-3312</Link>
-              <Link sx={styles.footer.link}> support@crypto.com</Link>
+              <Link sx={styles.footer.link}>
+                <FaPhoneAlt /> 394-091-3312
+              </Link>
+              <Link sx={styles.footer.link}>
+                <HiOutlineMail /> support@crypto.com
+              </Link>
             </nav>
           </Box>
         </Box>
@@ -93,6 +116,16 @@ const styles = {
       display: "flex",
       flexDirection: "column",
       mb: ["40px", null, null, "60px"],
+      a: {
+        color: "rgba(114, 115, 124, 1)",
+      },
+    },
+
+    ".social-items": {
+      width: "300px",
+      padding: "0 30px",
+      display: "flex",
+      justifyContent: "space-between",
     },
 
     heading: {
