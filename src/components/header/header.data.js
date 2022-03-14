@@ -1,23 +1,44 @@
 export default [
-  
+    {
+      path: 'home',
+      label: 'Explore',
+      link: "/",
+    },
+    {
+      path: 'feature',
+      label: 'Social',
+      link: "/social",
+    },
+    {
+      path: 'testimonial',
+      label: 'Contact Us',
+      link: "/contact"
+    },
+]
+
+export const otherItems = [
   {
-    path: 'home',
-    label: 'Explore',
-    link: "/",
-  },
-  {
-    path: 'feature',
-    label: 'Social',
-    link: "/social",
-  },
-  {
-    path: 'testimonial',
-    label: 'Contact Us',
-    link: "/contact"
-  },
-  {
-    path: 'Home',
     label: 'Home',
     link: "/home"
   },
-];
+  {
+    label: 'Explore_2',
+    link: "/explore"
+  },
+  {
+    label: 'Detail',
+    link: "/detail"
+  },
+  {
+    label: 'Social',
+    link: "/social"
+  },
+  {
+    label: 'Notification V1',
+    link: "/notification_1"
+  },
+  {
+    label: 'Notification V2',
+    link: "/notification_2"
+  }
+]

@@ -16,13 +16,8 @@ export default function IndexPage() {
     }
   };
   return (
-    <ThemeProvider theme={theme}>
-      <StickyProvider>  
-        <Sticky innerZ={1001} top={0} onStateChange={handleStateChange}>
-          <Header className={`${isSticky ? 'sticky' : 'unSticky'}`} />
-        </Sticky>          
-        <Faq />
-      </StickyProvider>
-    </ThemeProvider>
+    <>
+      <Faq />
+    </>
   );
 }

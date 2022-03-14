@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import Sticky from 'react-stickynode';
 import Header from './header/header';
 import Footer from './footer/footer';
+import router, { useRouter } from 'next/router'
 
 export default function Layout({ children }) {
+  const pathname = useRouter().pathname;
   const [isSticky, setIsSticky] = useState(false);
   const handleStateChange = (status) => {
     if (status.status === Sticky.STATUS_FIXED) {
@@ -26,7 +28,9 @@ export default function Layout({ children }) {
       >
         {children}
       </main>
-      <Footer />
+      {
+        pathname.search("campaign") > -1 ? "" : <Footer /> 
+      }
     </React.Fragment>
   );
 }
