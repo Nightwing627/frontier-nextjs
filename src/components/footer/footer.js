@@ -19,7 +19,7 @@ export default function Footer() {
             </p>
             <div>
               <Link path="/">
-                <i class="fa-brands fa-facebook-f"></i>
+                <i className="fa-brands fa-facebook-f"></i>
               </Link>
               <Link path="/">twitter</Link>
               <Link path="/">media</Link>
