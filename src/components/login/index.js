@@ -13,7 +13,7 @@ export default function Login({ className }) {
           {label}
         </Link>
       ))} */}
-      <Grid columns={[1, null, null, null, 2]}>
+      <Grid columns={[1, null, null, null, 2]} sx={styles.loginpage}>
         <Box sx={styles.logImg}>
           <Image src={logImg} alt="Sign logo" />
         </Box>
@@ -43,14 +43,22 @@ export default function Login({ className }) {
 
 const styles = {
   logImg: {
-    textAlign: "center !important",
     backgroundColor: " rgba(244, 244, 244, 1)",
+    height: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  loginpage: {
+    alignItems: "center",
+    height: "100vh",
   },
   logPage: {
-    paddingTop: "126px",
     color: "black",
     fontSize: "30px",
     backgroundColor: "white",
+    height: "100vh",
+
     ".logform": {
       margin: "0 auto",
       width: "400px",
