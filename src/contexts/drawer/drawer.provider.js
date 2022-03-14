@@ -15,6 +15,7 @@ function reducer(state, action) {
       return state;
   }
 }
+
 export const DrawerProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (

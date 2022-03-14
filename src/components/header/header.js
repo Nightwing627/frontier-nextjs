@@ -2,7 +2,7 @@
 import { jsx, Container, Flex, Button, Image } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 // import { Link } from 'react-scroll';
-import { useRouter } from 'next/router'
+import router, { useRouter } from 'next/router'
 import Link from "next/link";
 import Logo from 'components/logo';
 import LogoWhite from 'assets/logo.svg';
@@ -36,6 +36,7 @@ export default function Header({ className }) {
             className="connect_wallet__btn"
             variant="secondary"
             aria-label="Connect to Wallet"
+            onclick = {() => { router.push('/campaign') }}
           >
             Connect to Wallet
           </Button>
