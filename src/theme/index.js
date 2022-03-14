@@ -7,7 +7,7 @@ export default {
     heading_secondary: '#0F2137', // heading color
     button_color: '#5B6EF5', // normal button color
     background: '#FFFFFF', // body background color
-    background_secondary: '#F9FBFD', // secondary background color
+    background_secondary: '#F4F5F7', // secondary background color
     border_color: '#E5ECF4', // border color
     primary: '#1F3E76', // primary button and link color
     secondary: '#717579', // secondary color - can be used for hover states
@@ -15,7 +15,6 @@ export default {
     accent: '#609', // a contrast color for emphasizing UI
     yellow: '#F6C416',
     section_bg_color: '#F4F5F7',
-
     // highlight	a background color for highlighting text
     modes: {
       dark: {
@@ -83,7 +82,9 @@ export default {
       alignItems: 'center',
       justifyContent: 'space-between',
     },
-    main: {},
+    main: {
+      bg: 'background_secondary',
+    },
   },
   section: {
     keyFeature: {
@@ -181,12 +182,11 @@ export default {
       color: '#0F2137',
     },
     lead: {
-      fontSize: 40,
-      fontFamily: 'DM Sans',
+      fontSize: 32,
+      fontFamily: 'mazzard-h-bold',
       fontWeight: '500',
       lineHeight: '60px',
-      letterSpacing: '-1.5px',
-      color: '#0F2137',
+      color: 'text',
     },
     muted: {
       lineHeight: '26px',

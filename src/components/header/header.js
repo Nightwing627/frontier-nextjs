@@ -14,7 +14,8 @@ import menuItems, { otherItems } from './header.data';
 
 export default function Header({ className }) {
   const pathname = useRouter().pathname;
-  
+  const router = useRouter();
+
   return (  
     <DrawerProvider>
       <header sx={styles.header} className={className} id="header">
@@ -42,6 +43,7 @@ export default function Header({ className }) {
             className="connect_wallet__btn"
             variant="secondary"
             aria-label="Connect to Wallet"
+            onClick = {() => { router.push('/campaign') }}
           >
             Connect to Wallet
           </Button>
