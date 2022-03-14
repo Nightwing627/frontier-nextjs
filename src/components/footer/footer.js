@@ -72,7 +72,7 @@ export default function Footer() {
               <Link sx={styles.footer.link}>
                 <FaPhoneAlt /> 394-091-3312
               </Link>
-              <Link sx={styles.footer.link}>
+              <Link sx={styles.footer.linkmail}>
                 <HiOutlineMail /> support@crypto.com
               </Link>
             </nav>
@@ -117,15 +117,8 @@ const styles = {
       flexDirection: "column",
       mb: ["40px", null, null, "60px"],
       a: {
-        color: "rgba(114, 115, 124, 1)",
+        color: "rgba(255, 255, 255, 0.6)",
       },
-    },
-
-    ".social-items": {
-      width: "300px",
-      padding: "0 30px",
-      display: "flex",
-      justifyContent: "space-between",
     },
 
     heading: {
@@ -134,6 +127,33 @@ const styles = {
       fontWeight: "500",
       mb: [3, 4, 5, null, 6],
       lineHeight: "1.35",
+    },
+
+    svg: {
+      fontSize: "20px",
+      marginRight: "10px",
+      "&:hover": {
+        color: "primary",
+      },
+    },
+
+    linkmail: {
+      display: "flex",
+      alignItems: "center",
+      fontSize: ["14px", null, "16px"],
+      color: "rgba(255, 255, 255, 0.6)",
+      fontWeight: "body",
+      mb: 2,
+      cursor: "pointer",
+      transition: "all 0.35s",
+      textDecoration: "none",
+      lineHeight: [1.5, null, null, 1.6, 1.8],
+      ":hover": {
+        color: "primary",
+      },
+      ":last-child": {
+        mb: "0px",
+      },
     },
 
     link: {
@@ -153,6 +173,25 @@ const styles = {
         mb: "0px",
       },
     },
+
+    ".social-items": {
+      width: "300px",
+      padding: "0 30px",
+      display: "flex",
+      justifyContent: "space-between",
+      a: {
+        svg: {
+          margin: "0",
+        },
+        padding: "10px 10px 0 10px",
+        "&:hover": {
+          backgroundColor: "rgba(91, 110, 245, 1)",
+          borderRadius: "10px",
+          color: "primary",
+        },
+      },
+    },
+
     copyright: {
       borderTop: "1px solid rgba(61, 63, 78, 1)",
       fontSize: ["14px", null, "16px"],
