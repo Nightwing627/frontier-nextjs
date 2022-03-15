@@ -48,7 +48,7 @@ export default function Login({ className }) {
                   email != "" && password != "" ? "continue" : "inactive"
                 }
               >
-                Continue
+                Sign in
               </button>
             </div>
             <p>

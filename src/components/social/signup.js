@@ -9,6 +9,15 @@ import logImg from "assets/logImg.svg"
 
 export default function Signup({ className }) {
   const [email, setEmail] = useState("")
+  const [code1, setCode1] = useState("")
+  const [code2, setCode2] = useState("")
+  const [code3, setCode3] = useState("")
+  const [code4, setCode4] = useState("")
+  const [emailverify, setEmailVerify] = useState(false)
+
+  const verifyFunc = () => {
+    email == "admin" ? setEmailVerify(true) : setEmailVerify(false)
+  }
 
   return (
     <div sx={styles.signPage} className={className}>
@@ -20,8 +29,13 @@ export default function Signup({ className }) {
           <div className="logform">
             <h2>Sign up</h2>
             <hr />
-            <p className="email-address">Your email address</p>
-            <div className="email-form">
+            <p className={!emailverify ? "email-address" : "hide"}>
+              Your email address
+            </p>
+            <p className={emailverify ? "email-address" : "hide"}>
+              We just send you a verify code. Check your inbox to get them.
+            </p>
+            <div className={!emailverify ? "email-form" : "hide"}>
               <div className="flex">
                 <HiMail />
                 <input
@@ -46,46 +60,72 @@ export default function Signup({ className }) {
                 />
               </div>
             </div>
-            <div className="email-code">
-              <input
-                type="number"
-                className={email != "admin" ? "code" : "white"}
-                placeholder="Your email"
-                value={email}
-                onInput={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="flex">
+
+            <div className={emailverify ? "flex" : "hide"}>
               <div className="email-code">
                 <input
                   type="number"
-                  className={email != "admin" ? "code" : "white"}
-                  placeholder="Your email"
-                  value={email}
-                  onInput={(e) => setEmail(e.target.value)}
+                  className={code1 == 1 ? "code" : "white"}
+                  value={code1}
+                  onInput={(e) => setCode1(e.target.value)}
                 />
               </div>
               <div className="email-code">
                 <input
                   type="number"
-                  className={email != "admin" ? "code" : "white"}
-                  placeholder="Your email"
-                  value={email}
-                  onInput={(e) => setEmail(e.target.value)}
+                  className={code2 == 1 ? "code" : "white"}
+                  value={code2}
+                  onInput={(e) => setCode2(e.target.value)}
                 />
               </div>
               <div className="email-code">
                 <input
                   type="number"
-                  className={email != "admin" ? "code" : "white"}
-                  placeholder="Your email"
-                  value={email}
-                  onInput={(e) => setEmail(e.target.value)}
+                  className={code3 == 1 ? "code" : "white"}
+                  value={code3}
+                  onInput={(e) => setCode3(e.target.value)}
+                />
+              </div>
+              <div className="email-code">
+                <input
+                  type="number"
+                  className={code4 == 1 ? "code" : "white"}
+                  value={code4}
+                  onInput={(e) => setCode4(e.target.value)}
                 />
               </div>
             </div>
-            <div>
-              <button className={email != "" ? "continue" : "inactive"}>
+
+            <p
+              className={
+                !(code1 == 1 && code2 == 1 && code3 == 1 && code4 == 1) &&
+                code1 != "" &&
+                code2 != "" &&
+                code3 != "" &&
+                code4 != ""
+                  ? "red"
+                  : "hide"
+              }
+            >
+              The code you entered is incorrect.
+            </p>
+
+            <div className={!emailverify ? "" : "hide"}>
+              <button
+                className={email == "admin" ? "continue" : "inactive"}
+                onClick={verifyFunc}
+              >
+                Continue
+              </button>
+            </div>
+            <div className={emailverify ? "" : "hide"}>
+              <button
+                className={
+                  code1 == 1 && code2 == 1 && code3 == 1 && code4 == 1
+                    ? "continue"
+                    : "inactive"
+                }
+              >
                 Continue
               </button>
             </div>
@@ -125,8 +165,13 @@ const styles = {
     fontSize: "30px",
     backgroundColor: "white",
     height: "100vh",
-
+    ".hide": {
+      display: "none",
+    },
     ".logform": {
+      ".red": {
+        color: "red",
+      },
       margin: "0 auto",
       width: "400px",
       ".email-address": {
@@ -168,16 +213,29 @@ const styles = {
       },
       ".email-code": {
         backgroundColor: "rgba(244, 244, 244, 1)",
+        width: "80px",
+        height: "80px",
         borderRadius: "12px",
         padding: "12px",
         alignItems: "center",
         display: "flex",
 
         ".code": {
-          fontSize: "18px",
+          width: "50px",
+          fontSize: "24px",
           border: "none",
           backgroundColor: "rgba(244, 244, 244, 1)",
           outline: "none",
+          textAlign: "center",
+          color: "black",
+        },
+        ".white": {
+          width: "50px",
+          fontSize: "24px",
+          border: "none",
+          backgroundColor: "rgba(244, 244, 244, 1)",
+          outline: "none",
+          color: "red",
         },
       },
       ".continue": {
@@ -210,6 +268,10 @@ const styles = {
         color: "black",
         fontWeight: "bold",
         textDecoration: "none",
+      },
+      ".flex": {
+        display: "flex",
+        justifyContent: "space-between",
       },
     },
   },
