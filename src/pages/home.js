@@ -6,7 +6,6 @@ import Category from "sections/category"
 import CryptoReview from "sections/crypto-review"
 import Subscribe from "sections/subscribe"
 import CryptoCommunity from "sections/crypto-community"
-import Social from "./social"
 
 export default function HomePage() {
   return (
@@ -18,7 +17,6 @@ export default function HomePage() {
       <Category />
       <CryptoReview />
       <Subscribe />
-      <Social />
     </>
   )
 }

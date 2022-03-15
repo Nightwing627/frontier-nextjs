@@ -1,15 +1,14 @@
 /** @jsx jsx */
 import React, { useState } from "react"
-import { jsx, Image, Grid, Box } from "theme-ui"
 import Link from "next/link"
-import { HiMail } from "react-icons/hi"
-import { RiLock2Line } from "react-icons/ri"
+import { jsx, Image, Grid, Box } from "theme-ui"
 
+import { HiMail } from "react-icons/hi"
+import { AiOutlineWarning, AiOutlineCheck } from "react-icons/ai"
 import logImg from "assets/logImg.svg"
 
-export default function Login({ className }) {
+export default function Signup({ className }) {
   const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
 
   return (
     <div sx={styles.signPage} className={className}>
@@ -19,35 +18,74 @@ export default function Login({ className }) {
         </Box>
         <Box>
           <div className="logform">
-            <h2>Sign in</h2>
+            <h2>Sign up</h2>
             <hr />
             <p className="email-address">Your email address</p>
             <div className="email-form">
-              <HiMail />
+              <div className="flex">
+                <HiMail />
+                <input
+                  type="email"
+                  className={email != "admin" ? "email" : "white"}
+                  placeholder="Your email"
+                  value={email}
+                  onInput={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div className="confirmicon">
+                <AiOutlineWarning
+                  fill="red"
+                  sx={
+                    email != "" && email != "admin" ? styles.show : styles.hide
+                  }
+                />
+                <AiOutlineCheck
+                  fill="green"
+                  sx={email == "admin" ? styles.show : styles.hide}
+                />
+              </div>
+            </div>
+            <div className="email-code">
               <input
-                type="email"
-                className="email"
+                type="number"
+                className={email != "admin" ? "code" : "white"}
                 placeholder="Your email"
                 value={email}
                 onInput={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="password-form">
-              <RiLock2Line />
-              <input
-                type="password"
-                className="email"
-                placeholder="Password"
-                value={password}
-                onInput={(e) => setPassword(e.target.value)}
-              />
+            <div className="flex">
+              <div className="email-code">
+                <input
+                  type="number"
+                  className={email != "admin" ? "code" : "white"}
+                  placeholder="Your email"
+                  value={email}
+                  onInput={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="email-code">
+                <input
+                  type="number"
+                  className={email != "admin" ? "code" : "white"}
+                  placeholder="Your email"
+                  value={email}
+                  onInput={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="email-code">
+                <input
+                  type="number"
+                  className={email != "admin" ? "code" : "white"}
+                  placeholder="Your email"
+                  value={email}
+                  onInput={(e) => setEmail(e.target.value)}
+                />
+              </div>
             </div>
             <div>
-              <button
-                className={
-                  email != "" && password != "" ? "continue" : "inactive"
-                }
-              >
+              <button className={email != "" ? "continue" : "inactive"}>
                 Continue
               </button>
             </div>
@@ -55,7 +93,7 @@ export default function Login({ className }) {
               This site is protected by reCAPTCHA and the Google Privacy Policy.
             </p>
             <p>
-              Already a member? <a href="#">Sign up</a>
+              Already a member? <a href="#">Sign in</a>
             </p>
           </div>
         </Box>
@@ -65,6 +103,12 @@ export default function Login({ className }) {
 }
 
 const styles = {
+  hide: {
+    display: "none",
+  },
+  show: {
+    display: "block",
+  },
   logImg: {
     backgroundColor: " rgba(244, 244, 244, 1)",
     height: "100vh",
@@ -95,31 +139,41 @@ const styles = {
         padding: "12px",
         alignItems: "center",
         display: "flex",
-        svg: {
-          color: "rgba(111, 118, 126, 1)",
-          marginRight: "10px",
-        },
+        justifyContent: "space-between",
 
+        ".flex": {
+          display: "flex",
+          svg: {
+            color: "rgba(111, 118, 126, 1)",
+            marginRight: "10px",
+          },
+        },
+        ".confirmicon": {
+          display: "flex",
+        },
         ".email": {
           fontSize: "18px",
           border: "none",
           backgroundColor: "rgba(244, 244, 244, 1)",
           outline: "none",
+          color: "red",
+        },
+        ".white": {
+          fontSize: "18px",
+          border: "none",
+          backgroundColor: "rgba(244, 244, 244, 1)",
+          outline: "none",
+          color: "black",
         },
       },
-      ".password-form": {
-        marginTop: "12px",
+      ".email-code": {
         backgroundColor: "rgba(244, 244, 244, 1)",
         borderRadius: "12px",
         padding: "12px",
         alignItems: "center",
         display: "flex",
-        svg: {
-          color: "rgba(111, 118, 126, 1)",
-          marginRight: "10px",
-        },
 
-        ".email": {
+        ".code": {
           fontSize: "18px",
           border: "none",
           backgroundColor: "rgba(244, 244, 244, 1)",
