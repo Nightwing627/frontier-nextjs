@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Flex, Box, Text, Input } from 'theme-ui';
+import { Flex, Box, Text, Input, Heading } from 'theme-ui';
 import { FaSearch, FaAngleDown } from 'react-icons/fa';
 import BG from 'assets/banner-bg/explore.png';
 import Categoires, { Popular } from './category.data';
@@ -8,7 +8,11 @@ import Categoires, { Popular } from './category.data';
 export default function Banner() {
   return (
     <section sx={styles.banner} id="home">
-        <Box sx={styles.banner.container}></Box>
+        <Box sx={styles.banner.container}>
+          <Heading as="p" sx={styles.title}>
+          Let’s find a crowdfunding projects around the world
+          </Heading>
+        </Box>
         <Box sx={styles.search}>
             <Flex sx={{ alignItems: 'center' }}>
                 <Flex as="nav" sx={styles.nav}>
@@ -57,11 +61,22 @@ const styles = {
       display: 'flex',
       background: `url(${BG})`,
       backgroundRepeat: 'no-repeat',
-      backgroundSize: 'contain',
+      backgroundSize: 'cover',
       margin: 0,
-      height: '60vh',
+      height: '48vh',
       width: '100%',
+      justifyContent: 'center',
+      textAlign: 'center',
     },
+  },
+  title: {
+    fontFamily: 'poppins-bold',
+    fontSize: '50px',
+    lineHeight: '75px',
+    position: 'absolute',
+    top: '32%',
+    width: '45%',
+    color: 'white',
   },
   input: {
     width: '70%',
@@ -77,12 +92,11 @@ const styles = {
     width: ['36%'],
     alignItems: 'center',
     borderRadius: '10px',
-    border: '1px solid black',
     margin: 'auto',
     p: '10px 5px',
     bg: 'white',
     boxShadow: '0px 10px 40px rgba(132, 133, 255, 0.35)',
-    top: '-60px',
+    top: '-45px',
     position: 'relative'
   },
   nav: {

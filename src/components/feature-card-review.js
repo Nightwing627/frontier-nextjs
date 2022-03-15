@@ -68,7 +68,7 @@ const styles = {
       pb: '20px',
     },
     heading: {
-      color: '#121E31',
+      color: 'text',
       fontFamily: 'mazzard-h-bold',
       fontSize: '20px',
       mt: 1,
@@ -96,7 +96,7 @@ const styles = {
       '.username': {
         fontFamily: 'mazzard-h-bold',
         fontSize: '18px',
-        color: '#121E31',
+        color: 'text',
       },
       '.user-text': {
         fontSize: '14px',
