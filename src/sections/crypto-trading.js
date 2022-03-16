@@ -17,7 +17,6 @@ import Collection2 from 'assets/collection/2.png';
 import Collection3 from 'assets/collection/3.png';
 import Collection4 from 'assets/collection/4.png';
 
-
 const data_1 = [
   {
     id: 1,

@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from 'sections/explore/banner';
 import Filter from 'sections/explore/filter-bar';
 import ResultList from 'sections/explore/result-list';
+import Donations from 'sections/explore/donation';
 import { Container, Flex } from 'theme-ui';
 
 export default function IndexPage() {
@@ -10,20 +11,11 @@ export default function IndexPage() {
       <Banner />
       <Container>
         <Flex>
-          <Filter sx={styles.filter}/>
-          <ResultList sx={styles.result}/>
+          <Filter />
+          <ResultList />
         </Flex>
       </Container>
-      
+      <Donations />
     </>
   );
-}
-
-const styles = {
-  filter: {
-    width: '30%',
-  },
-  result: {
-    width: '70%',
-  }
 }

@@ -1,9 +1,11 @@
-import Login from "../../components/login"
+import Signup from "../../components/social/signup.js"
+// import Login from "../../components/social/login.js"
 
 export default function Social() {
   return (
     <>
-      <Login></Login>
+      <Signup />
+      {/* <Login /> */}
     </>
   )
 }

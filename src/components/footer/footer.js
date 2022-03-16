@@ -10,7 +10,7 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
 } from "react-icons/fa"
-import { HiOutlineMail } from "react-icons/hi"
+import { HiMail } from "react-icons/hi"
 import Logo from "components/logo"
 import LogoWhite from "assets/logo_bottom.svg"
 import menuItems from "./footer.data"
@@ -73,7 +73,7 @@ export default function Footer() {
                 <FaPhoneAlt /> 394-091-3312
               </Link>
               <Link sx={styles.footer.linkmail}>
-                <HiOutlineMail /> support@crypto.com
+                <HiMail /> support@crypto.com
               </Link>
             </nav>
           </Box>

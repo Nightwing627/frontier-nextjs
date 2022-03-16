@@ -9,7 +9,7 @@ export default {
     background: '#FFFFFF', // body background color
     background_secondary: '#F4F5F7', // secondary background color
     border_color: '#E5ECF4', // border color
-    primary: '#1F3E76', // primary button and link color
+    primary: '#5B6EF5', // primary button and link color
     secondary: '#717579', // secondary color - can be used for hover states
     muted: '#7B8188', // muted color
     accent: '#609', // a contrast color for emphasizing UI
@@ -131,7 +131,7 @@ export default {
 
     subTitle: {
       fontSize: [0, null, '16px'],
-      color: '#121E31',
+      color: 'text',
       textAlign: 'center',
       letterSpacing: ['1.5px', null, '0px'],
       fontWeight: '700',
@@ -152,7 +152,7 @@ export default {
       color: 'heading',
     },
     heroPrimary: {
-      color: '#121E31',
+      color: 'text',
       fontFamily: 'mazzard-h-bold',
       fontSize: [
         '30px',
@@ -168,7 +168,7 @@ export default {
       mb: [5, null, null, null, '10px'],
     },
     heroSecondary: {
-      color: '#121E31',
+      color: 'text',
       fontSize: [2, 3, 4, '17px', null, 3, '18px', '18px'],
       lineHeight: [2, null, null, null, '28px'],
       fontWeight: 'body',
@@ -415,7 +415,7 @@ export default {
 
     subTitle: {
       fontSize: [0, null, '16px'],
-      color: '#121E31',
+      color: 'text',
       textAlign: 'center',
       letterSpacing: ['1.5px', null, '2px'],
       textTransform: 'uppercase',

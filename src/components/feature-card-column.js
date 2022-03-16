@@ -74,7 +74,6 @@ const styles = {
     mt: ['40px', null, null, 0],
     p: 0,
     '@media screen and (min-width: 420px) and (max-width: 767px)': {
-      maxWidth: '380px',
       margin: 'auto'
     },
     card: {
@@ -89,7 +88,7 @@ const styles = {
       fontSize: '18px',
     },
     heading: {
-      color: '#121E31',
+      color: 'text',
       fontFamily: 'mazzard-h-bold',
       fontSize: '22px',
       mt: 1,
@@ -167,7 +166,7 @@ const styles = {
       '.username': {
         fontFamily: 'mazzard-h-bold',
         fontSize: '18px',
-        color: '#121E31',
+        color: 'text',
       },
       '.user-text': {
         fontSize: '14px',
@@ -177,7 +176,6 @@ const styles = {
           color: '#717579',
         },
       },
-      
     },
   },
  
