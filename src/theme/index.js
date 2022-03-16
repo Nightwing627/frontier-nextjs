@@ -90,6 +90,9 @@ export default {
     keyFeature: {
       py: [8, null, 9, null, null, 10],
     },
+    campaignFeature : {
+      py: ["90px", "110px", "110px", "110px", "150px", "150px"],
+    },
     feature: {
       py: [8, null, 9, null, null, 10],
     },
