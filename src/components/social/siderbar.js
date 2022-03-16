@@ -46,16 +46,13 @@ const styles = {
       "&:hover": {
         backgroundColor: "#5B6EF5",
         borderRadius: "8px",
+        color: "white",
       },
     },
 
     aloneList: {
       width: "100%",
-      pl: "10px",
-      "&:hover": {
-        backgroundColor: "#5B6EF5",
-        borderRadius: "8px",
-      },
+      pl: "15px",
     },
     icon: {
       pt: "2px",
