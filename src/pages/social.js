@@ -1,13 +1,13 @@
-// import Signup from "../components/social/signup.js"
-// import Login from "../components/social/login.js"
-import SocialPage from "../components/social/social.js"
+// import Signup from "../sections/social/signup.js"
+// import Login from "../sections/social/login.js"
+import SocialHome from "../sections/social/home.js"
 
 export default function Social() {
   return (
     <>
       {/* <Signup /> */}
       {/* <Login /> */}
-      <SocialPage />
+      <SocialHome />
     </>
   )
 }
