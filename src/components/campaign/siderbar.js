@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import router, { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { jsx, Image, Box, Heading, Text, Card, Progress, Flex } from 'theme-ui';
+import { jsx, Box, Text, Flex } from 'theme-ui';
 import list from './sidebar.data';
 
 export default function Sidebar() {
@@ -22,16 +22,16 @@ export default function Sidebar() {
     return(
         <Box>
             <ul sx={{padding: '0px 0px'}}>
-                {list.map((item) => (                    
-                    <li onClick={(e)=> handleMainMenu(e, item.sublist.length, item.router)} sx={styles.mainlist.type}>
+                {list.map((item, i) => (                    
+                    <li key={i} onClick={(e)=> handleMainMenu(e, item.sublist.length, item.router)} sx={styles.mainlist.type}>
                         <Flex>
                             <Text sx={styles.mainlist.icon}>{item.icon}</Text>
                             <Text sx={item.sublist.length > 0 ? styles.mainlist.multiList : styles.mainlist.aloneList}> {item.text} </Text>
                             {item.sublist.length > 0 ? <Text sx={styles.mainlist.icon}>{subFlag ? item.subIconUp : item.subIconDown}</Text> : "" }
                         </Flex>
                         <ul sx={subFlag ? styles.mainlist.subListActive : styles.mainlist.subListNonActive}>
-                            {item.sublist.map((item) => (
-                                <li onClick={()=> {router.push(item.router)}} sx={styles.mainlist.sublistType}>
+                            {item.sublist.map((item, i) => (
+                                <li key={i} onClick={()=> {router.push(item.router)}} sx={styles.mainlist.sublistType}>
                                     {item.text}
                                 </li>
                             ))}

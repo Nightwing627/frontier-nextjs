@@ -49,15 +49,15 @@ const MobileDrawer = () => {
         <Box sx={styles.content}>
           <Box sx={styles.menu}>
             <ul>
-              {list.map((item) => (                    
-                <li onClick={(e)=> handleMainMenu(e, item.sublist.length, item.router)} sx={styles.mainlist.type}>
+              {list.map((item, i) => (                    
+                <li key={i} onClick={(e)=> handleMainMenu(e, item.sublist.length, item.router)} sx={styles.mainlist.type}>
                   <Flex>
                     <Text sx={styles.mainlist.icon}>{item.icon}</Text>
                     <Text sx={item.sublist.length > 0 ? styles.mainlist.multiList : styles.mainlist.aloneList}> {item.text} </Text>                    
                   </Flex>
                   <ul sx={subFlag ? styles.mainlist.subListActive : styles.mainlist.subListNonActive}>
-                    {item.sublist.map((item) => (
-                      <li onClick={()=> {router.push(item.router)}} sx={styles.mainlist.sublistType}>
+                    {item.sublist.map((item, i) => (
+                      <li key={i} onClick={()=> {router.push(item.router)}} sx={styles.mainlist.sublistType}>
                         {item.text}
                       </li>
                     ))}

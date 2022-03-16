@@ -8,24 +8,22 @@ import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
 
 export default function CampaignLayout({ children }) {
   return (
-    <React.Fragment>
-        <DrawerProvider>
-            <Box sx={styles.sidebar}>
-                <Siderbar />
+    <DrawerProvider>
+        <Box sx={styles.sidebar}>
+            <Siderbar />
+        </Box>
+        <Grid sx={styles.grid}>
+            <Box>                    
+                <MobileDrawer /> 
             </Box>
-            <Grid sx={styles.grid}>
-                <Box>                    
-                    <MobileDrawer /> 
-                </Box>
-                <Box>
-                    <main>
-                        {children}
-                    </main>
-                </Box>
-                <Box></Box>
-            </Grid>
-        </DrawerProvider>        
-    </React.Fragment>
+            <Box>
+                <main>
+                    {children}
+                </main>
+            </Box>
+            <Box></Box>
+        </Grid>
+    </DrawerProvider>   
   );
 }
 
