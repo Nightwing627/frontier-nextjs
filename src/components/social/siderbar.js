@@ -56,6 +56,7 @@ const styles = {
     },
     icon: {
       pt: "2px",
+      fontSize: "20px",
     },
   },
 }
