@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React, { useState } from "react"
-import { Box, Grid, Flex } from "theme-ui"
+import { Box, Grid, Flex, Container } from "theme-ui"
 import Siderbar from "./siderbar"
 import MobileDrawer from "./mobile-drawer"
 import { DrawerProvider } from "../../contexts/drawer/drawer.provider"
@@ -9,18 +9,17 @@ import { DrawerProvider } from "../../contexts/drawer/drawer.provider"
 export default function SocialLayout({ children }) {
   return (
     <DrawerProvider>
-      <Box sx={styles.sidebar}>
-        <Siderbar />
-      </Box>
-      <Grid sx={styles.grid}>
-        <Box>
-          <MobileDrawer />
-        </Box>
-        <Box>
-          <main>{children}</main>
-        </Box>
-        <Box></Box>
-      </Grid>
+      <Container>
+        <MobileDrawer />
+        
+        <Grid sx={styles.grid}>
+          <Box sx={styles.sidebar}>
+            <Siderbar />
+          </Box>
+          {children}
+        </Grid>
+      </Container>
+      
     </DrawerProvider>
   )
 }
@@ -30,14 +29,10 @@ const styles = {
     "@media screen and (max-width: 1024px)": {
       display: "none",
     },
-    position: "fixed",
-    ml: "3%",
-    width: "20%",
     height: "calc(100vh)",
     bg: "white",
-    px: "2%",
-    mt: "-20px",
-    py: "1%",
+    p: '5%',
+    mt: '-20px',
   },
   section: {
     variant: "section.campaignFeature",
@@ -61,7 +56,7 @@ const styles = {
       "repeat(1, 1fr)",
       null,
       null,
-      "repeat(1, 1fr 2fr 1fr)",
+      "repeat(1, 1fr 3fr)",
     ],
   },
 }

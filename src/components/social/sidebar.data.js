@@ -6,7 +6,7 @@ export default [
   {
     icon: <BiHomeAlt />,
     text: "Feed",
-    router: "/social/home",
+    router: "/social/feed",
     className: "campagin-preview",
   },
   {

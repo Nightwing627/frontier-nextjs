@@ -49,7 +49,6 @@ const styles = {
         color: "white",
       },
     },
-
     aloneList: {
       width: "100%",
       pl: "15px",
