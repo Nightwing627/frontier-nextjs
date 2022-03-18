@@ -156,7 +156,7 @@ export default function Profilepage() {
                   About
                 </Button>
               </Box>
-              <Box sx={{ display: "flex" }}>
+              <Box sx={isAbout ? styles.hide : { display: "flex" }}>
                 <Select defaultValue="Most Recent">
                   <option>Most Recent</option>
                   <option>Most Old</option>
