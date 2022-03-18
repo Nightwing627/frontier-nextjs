@@ -26,7 +26,7 @@ export default function Sidebar() {
             </Flex>
           </li>
         ))}
-      </ul>
+      </ul>      
     </Box>
   )
 }

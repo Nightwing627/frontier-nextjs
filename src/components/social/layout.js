@@ -44,19 +44,19 @@ const styles = {
     gridGap: [
       "35px 0",
       null,
-      "45px 28px",
+      "45px 20px",
       null,
-      "50px 28px",
+      "50px 25px",
       null,
       null,
-      "50px 28px",
+      "50px 30px",
     ],
     gridTemplateColumns: [
       "repeat(1, 1fr)",
       "repeat(1, 1fr)",
       null,
       null,
-      "repeat(1, 1fr 3fr)",
+      "repeat(1, 20% 80%)",
     ],
   },
 }
