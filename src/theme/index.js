@@ -88,7 +88,7 @@ export default {
   },
   section: {
     keyFeature: {
-      py: [8, null, 9, null, null, 9],
+      py: [8, null, 9, null, null, 10],
     },
     campaignFeature : {
       pt: ["90px", "110px", "110px", "110px", "150px", "150px"],
@@ -427,5 +427,5 @@ export default {
       pl: ['5%', '6%', '8%', '10%', '13%', '15%'],
       pr: ['5%', '6%', '8%', '10%', '13%', '15%'],
     },
-  },
+  },  
 };

@@ -3,13 +3,13 @@ import { jsx } from "theme-ui"
 import React, { useState } from "react"
 import SocialLayout from "../../components/social/layout"
 
-import Feed from 'sections/social/feed'
+import Profilepage from "sections/social/profile"
 
-export default function SocialFeed() {
+export default function Profile() {
   return (
     <section sx={styles.social} id="social">
       <SocialLayout>
-        <Feed />
+        <Profilepage />
       </SocialLayout>
     </section>
   )
@@ -17,6 +17,6 @@ export default function SocialFeed() {
 
 const styles = {
   social: {
-    variant: 'section.keyFeature'
+    variant: "section.keyFeature",
   },
 }

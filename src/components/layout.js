@@ -29,7 +29,7 @@ export default function Layout({ children }) {
         {children}
       </main>
       {
-        pathname.search("campaign") > -1 ? "" : <Footer /> 
+        (pathname.search("campaign") + pathname.search("social")) < 0 ? <Footer /> : "" 
       }
     </React.Fragment>
   );

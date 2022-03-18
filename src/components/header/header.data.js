@@ -27,7 +27,7 @@ export const otherItems = [
   },
   {
     label: 'Detail',
-    link: "/detail"
+    link: "/explore/detail"
   },
   {
     label: 'Social',

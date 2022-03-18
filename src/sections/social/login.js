@@ -13,7 +13,7 @@ export default function Login({ className }) {
 
   return (
     <div sx={styles.signPage} className={className}>
-      <Grid columns={[1, null, null, null, 2]} sx={styles.signuppage}>
+      <Grid columns={[1, null, null, 2]} sx={styles.signuppage}>
         <Box sx={styles.logImg}>
           <Image src={logImg} alt="Sign logo" />
         </Box>
@@ -67,20 +67,21 @@ export default function Login({ className }) {
 const styles = {
   logImg: {
     backgroundColor: " rgba(244, 244, 244, 1)",
-    height: "100vh",
+    height: [null, "100vh", "100vh", "100vh"],
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    marginTop: ["110px", 0],
   },
   signuppage: {
     alignItems: "center",
-    height: "100vh",
+    height: [null, "100vh", "100vh", "100vh"],
   },
   signPage: {
     color: "black",
     fontSize: "30px",
     backgroundColor: "white",
-    height: "100vh",
+    height: [null, "100vh", "100vh", "100vh"],
 
     ".logform": {
       margin: "0 auto",
