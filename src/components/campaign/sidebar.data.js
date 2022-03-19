@@ -10,7 +10,7 @@ export default [
         icon: <AiOutlineEye />,
         text: "Preview Campaign",
         router: "/campaign/preview",
-        className: "campagin-preview",
+        id: "campaign_preview",
         sublist: []
     }, 
     {
@@ -19,19 +19,19 @@ export default [
         subIconDown: <AiOutlineDown />,
         text: "Campaign Editor",
         router: "",
-        className: "campagin-editor",
+        id: "campaign_editor",
         sublist: [
             {
                 text: "Basics",
                 router: "/campaign/editor/basic",
             },
             {
-                text: "Contents",
+                text: "Content",
                 router: "/campaign/editor/content",
             },
             {
                 text: "Perks",
-                router: "/campaign/editor/perk",
+                router: "/campaign/editor/perks",
             },
             {
                 text: "Team",
@@ -43,11 +43,11 @@ export default [
             },
             {
                 text: "Extras",
-                router: "/campaign/editor/extra",
+                router: "/campaign/editor/extras",
             },
             {
                 text: "Settings",
-                router: "/campaign/editor/setting",
+                router: "/campaign/editor/settings",
             },
         ]
     }

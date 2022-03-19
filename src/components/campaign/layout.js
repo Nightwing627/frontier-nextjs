@@ -4,27 +4,33 @@ import React, { useState } from 'react';
 import { Box, Grid, Flex} from 'theme-ui';
 import Siderbar from "./siderbar";
 import MobileDrawer from './mobile-drawer';
+import router, { useRouter } from 'next/router';
 import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
 
 export default function CampaignLayout({ children }) {
-  return (
-    <DrawerProvider>
-        <Box sx={styles.sidebar}>
-            <Siderbar />
-        </Box>
-        <Grid sx={styles.grid}>
-            <Box>                    
-                <MobileDrawer /> 
-            </Box>
-            <Box>
-                <main>
-                    {children}
-                </main>
-            </Box>
-            <Box></Box>
-        </Grid>
-    </DrawerProvider>   
-  );
+    const pathname = useRouter().pathname;
+    return (
+        <DrawerProvider>
+            { 
+            pathname != '/campaign' ? 
+                <Box sx={styles.sidebar}>
+                    <Siderbar /> 
+                </Box>
+                : "" 
+            }
+            <Grid sx={styles.grid}>
+                <Box>                    
+                    <MobileDrawer /> 
+                </Box>
+                <Box sx={styles.mainContent}>
+                    <main>
+                        {children}
+                    </main>
+                </Box>
+                <Box></Box>
+            </Grid>
+        </DrawerProvider>   
+    );
 }
 
 const styles = {
@@ -38,8 +44,13 @@ const styles = {
         height: 'calc(100vh)',
         bg: 'white',
         px: '2%',
-        mt: '-20px',
-        py: '1%'
+        mt: '-30px',
+        py: '2%'
+    },
+    mainContent: {
+        px: '3%',
+        py: '5%',
+        backgroundColor: 'white'
     },
     section: {
         variant: 'section.campaignFeature',
@@ -49,7 +60,7 @@ const styles = {
         mb: -1,
         pt: 0,
         gridGap: [
-            '35px 0',
+            '25px 0',
             null,
             '45px 28px',
             null,
