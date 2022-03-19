@@ -7,6 +7,8 @@ import avatar1 from 'assets/user-avatars/avatar_5.png'
 import avatar2 from 'assets/user-avatars/avatar_6.png' 
 import avatar3 from 'assets/user-avatars/avatar_7.png' 
 
+import { FaHeart } from 'react-icons/fa'
+
 export default [
     {
         id: 1,
@@ -79,4 +81,64 @@ export const ContactData = [
         name: 'Alvaro Mcgee',
         imgSrc: avatar3,
     },
+]
+
+export const NewsData = [
+    {
+        id: 1,
+        avatar: avatar1,
+        username: 'Lurline',
+        commentOn: 'Smiles - 3D icons',
+        comment: 'Greate work, I just purchased this product',
+        icon: <FaHeart className="news-status"/>,
+        status: 'like'
+    },{
+        id: 2,
+        avatar: avatar1,
+        username: 'Lurline',
+        commentOn: 'Smiles - 3D icons',
+        comment: 'Greate work, I just purchased this product',
+        icon: <FaHeart className="news-status"/>,
+        status: 'like'
+    },{
+        id: 3,
+        avatar: avatar1,
+        username: 'Lurline',
+        commentOn: 'Smiles - 3D icons',
+        comment: 'Greate work, I just purchased this product',
+        icon: <FaHeart className="news-status"/>,
+        status: 'like'
+    },{
+        id: 4,
+        avatar: avatar1,
+        username: 'Lurline',
+        commentOn: 'Smiles - 3D icons',
+        comment: 'Greate work, I just purchased this product',
+        icon: <FaHeart className="news-status"/>,
+        status: 'like'
+    },{
+        id: 5,
+        avatar: avatar1,
+        username: 'Lurline',
+        commentOn: 'Smiles - 3D icons',
+        comment: 'Greate work, I just purchased this product',
+        icon: <FaHeart className="news-status"/>,
+        status: 'like'
+    },{
+        id: 6,
+        avatar: avatar1,
+        username: 'Lurline',
+        commentOn: 'Smiles - 3D icons',
+        comment: 'Greate work, I just purchased this product',
+        icon: <FaHeart className="news-status"/>,
+        status: 'like'
+    },{
+        id: 7,
+        avatar: avatar1,
+        username: 'Lurline',
+        commentOn: 'Smiles - 3D icons',
+        comment: 'Greate work, I just purchased this product',
+        icon: <FaHeart className="news-status"/>,
+        status: 'like'
+    }
 ]

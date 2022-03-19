@@ -6,13 +6,13 @@ export default [
   {
     icon: <BiHomeAlt />,
     text: "Feed",
-    router: "/social/feed",
+    router: "/social",
     className: "campagin-preview",
   },
   {
     icon: <BiBell />,
     text: "Notifications",
-    router: "/social/notifications",
+    router: "/social/notification",
     className: "campagin-preview",
   },
   {
