@@ -1,6 +1,7 @@
-import { BiHomeAlt, BiBell, BiLogOut } from "react-icons/bi"
+import { BiHomeAlt, BiBell, BiLogOut, BiCommentDetail } from "react-icons/bi"
 import { AiOutlineSetting } from "react-icons/ai"
-import { BsPerson, BsChatDots } from "react-icons/bs"
+import { BsChatDots } from "react-icons/bs"
+import { FiUsers, FiUser } from "react-icons/fi"
 
 export default [
   {
@@ -16,19 +17,19 @@ export default [
     className: "campagin-preview",
   },
   {
-    icon: <BiBell />,
+    icon: <FiUsers />,
     text: "Community",
     router: "/social/community",
     className: "campagin-preview",
   },
   {
-    icon: <BsChatDots />,
+    icon: <BiCommentDetail />,
     text: "Chat",
     router: "/social/chat",
     className: "campagin-preview",
   },
   {
-    icon: <BsPerson />,
+    icon: <FiUser />,
     text: "Profile",
     router: "/social/profile",
     className: "campagin-preview",
