@@ -101,19 +101,6 @@ const styles = {
             justifyContent: 'space-between',
             alignItems: 'center',
         },
-        titleLeftWall: {
-            width: '16px',
-            height: '32px',
-            bg: '#FFBC99',
-            borderRadius: '4px'
-        },
-        titleLeft: {
-            fontSize: '20px',
-            lineHeight: '32px',
-            fontFamily: 'mazzard-h-bold',
-            ml: '16px'
-        },
-        
     },
     newsItem: {
         pl: 2,

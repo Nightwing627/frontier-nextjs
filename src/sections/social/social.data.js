@@ -8,6 +8,10 @@ import avatar2 from 'assets/user-avatars/avatar_6.png'
 import avatar3 from 'assets/user-avatars/avatar_7.png' 
 import avatar4 from 'assets/user-avatars/avatar_8.png' 
 
+import suggest1 from 'assets/social/communites/suggested/1.png'
+import suggest2 from 'assets/social/communites/suggested/2.png'
+import suggest3 from 'assets/social/communites/suggested/3.png'
+
 import { FaHeart } from 'react-icons/fa'
 
 export default [
@@ -162,4 +166,46 @@ export const NotiDetail = [
         Nov 20, 2021. Review it now.`,
         time: 6
     },
+]
+
+export const SuggestData = [
+    {
+        id: 1,
+        imgSrc: suggest1,
+        title: 'Behance',
+        members: '74k',
+        posts: 60,
+        summary: 'Ito and 2 friends are members',
+        users: {
+            user1: avatar1,
+            user2: avatar2,
+            user3: avatar3,
+        }
+    },
+    {
+        id: 2,
+        imgSrc: suggest2,
+        title: 'Apple',
+        members: '74k',
+        posts: 60,
+        summary: 'Ito and 2 friends are members',
+        users: {
+            user1: avatar1,
+            user2: avatar2,
+            user3: avatar3,
+        }
+    },
+    {
+        id: 3,
+        imgSrc: suggest3,
+        title: 'Crypto Trading',
+        members: '74k',
+        posts: 60,
+        summary: 'Ito and 2 friends are members',
+        users: {
+            user1: avatar1,
+            user2: avatar2,
+            user3: avatar3,
+        }
+    }
 ]
