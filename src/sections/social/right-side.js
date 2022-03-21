@@ -119,7 +119,7 @@ const styles = {
     story: {
         '.story-item': {
             borderRadius: '10px',
-            height: '25vh',
+            height: '17vh',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             display: 'flex',
@@ -131,7 +131,7 @@ const styles = {
             fontSize: '14px',
             textAlign: 'center',
             position: 'relative',
-            top: '55%',
+            top: '46%',
             height: 'fit-content',
             '> img': {
                 width: '55px',

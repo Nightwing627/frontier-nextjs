@@ -218,14 +218,13 @@ const styles = {
         },
         
     },
-    news: { mt: 6 },
     newsItem: {
         color: '#9A9FA5',
         fontSize: '15px',
         fontWeight: '500',
         lineHeight: '24px',
         pl: 2,
-        pb: 6,
+        py: 6,
         justifyContent: 'space-between',
         borderBottom: '1px solid #EFEFEF',
         avatar: {
