@@ -8,15 +8,16 @@ import {
   Text,
   Image,
   Button,
-  IconButton,
   Grid,
   Card,
   Select,
-  NavLink
+  NavLink,
+  Checkbox,
+  Label
 } from "theme-ui"
 import React, { useState } from "react"
 import { FaCircle, FaEllipsisH, FaAngleDown, FaSpinner } from 'react-icons/fa'
-import { NewsData } from './social.data'
+import { NewsData, FilterData } from './social.data'
 
 export default function Notification() {
     return (
@@ -75,11 +76,29 @@ export default function Notification() {
 
                     <Flex sx={styles.newsItem.loadMore}>                        
                         <Button sx={styles.newsItem.loadMore.btn}>
-                            <FaSpinner /> Load More</Button>
+                            <FaSpinner sx={{ mr: 1 }}/> Load More</Button>
                     </Flex>
                 </Card>
-                <Card sx={styles.filterContent}>
 
+                <Card sx={styles.filter}>
+                    <Flex sx={{ alignItems: 'center' }}>
+                        <Box sx={styles.filter.titleLeftWall}></Box>
+                        <Text as="span" sx={styles.filter.titleLeft}>Filter</Text>
+                    </Flex>
+                    <Box sx={styles.filter.content}>
+                        {FilterData.map((item) => (
+                            <Box key={item.id} sx={styles.filter.item}>
+                                <Label sx={{ width: '100%', justifyContent: 'space-between' }}>
+                                    <Text as="span" sx={styles.filter.text}>{item.name}</Text>
+                                    <Checkbox className="filter-checkbox" />
+                                </Label>
+                            </Box>
+                        ))}
+                    </Box>
+                    <Flex sx={styles.filter.select}>
+                        <a className="filter-select">Select all</a>
+                        <a className="filter-select">Unselect all</a>
+                    </Flex>
                 </Card>
             </Grid>
         </Container>
@@ -110,7 +129,7 @@ const styles = {
           "repeat(1, 1fr)",
           null,
           null,
-          "repeat(1, 65% 30%)",
+          "repeat(1, 65% 35%)",
         ],
     },
     newContent: {
@@ -187,7 +206,7 @@ const styles = {
         fontWeight: '500',
         lineHeight: '24px',
         pl: 2,
-        py: 6,
+        pb: 6,
         justifyContent: 'space-between',
         borderBottom: '1px solid #EFEFEF',
         avatar: {
@@ -241,14 +260,72 @@ const styles = {
             width: '100%',
             justifyContent: 'center',
             btn: {
+                bg: '#FCFCFC',
+                fontSize: '14px',
                 color: '#1A1D1F',
-                bg: 'white',
+                p: '16px',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                borderRadius: '8px',
+                border: '2px solid #EFEFEF',
+                boxShadow: 'none',
+                fontSize: '14px !important',
+                padding: '10px 15px !important',
+                '&:hover': { boxShadow: 'none', }
             }
         }
     },
-    filterContent: {
+    filter: {
         bg: '#FCFCFC',
         borderRadius: '8px',
-
+        p: '24px',
+        titleLeftWall: {
+            width: '16px',
+            height: '32px',
+            bg: '#CABDFF',
+            borderRadius: '4px'
+        },
+        titleLeft: {
+            fontSize: '20px',
+            lineHeight: '32px',
+            fontFamily: 'mazzard-h-bold',
+            ml: '16px'
+        },
+        text: {
+            fontSize: '15px',
+            fontFamily: 'Inter',
+            color: '#1A1D1F',
+        },
+        content: {
+            py: 6,
+        },
+        item: {
+            mb: '16px',
+        },
+        '.filter-checkbox': {
+            width: '28px',
+            height: '28px',
+        },
+        select: {
+            justifyContent: 'center',
+            '.filter-select': {
+                border: '2px solid #EFEFEF',
+                borderRadius: '8px',
+                padding: '8px 10%',
+                fontSize: '13px',
+                color: '#1A1D1F',
+                letterSpacing: '-0.01em',
+                ml: '12px',
+                fontFamily: 'Inter',
+                fontWeight: 'Bold',
+                cursor: 'pointer',
+                '&:hover': {
+                    boxShadow: '0 12px 21px rgb(134 133 255 / 16%)',
+                }
+            }
+        }
+        
     }
 }
