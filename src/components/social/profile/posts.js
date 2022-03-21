@@ -184,7 +184,7 @@ const styles = {
         borderRadius: "50%",
       },
       username: {
-        color: "#203758",
+        color: "social_text",
         fontFamily: "mazzard-h-bold",
         fontSize: "18px",
       },
