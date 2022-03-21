@@ -6,8 +6,6 @@ import avatar1 from "assets/user-avatars/avatar_5.png"
 import avatar2 from "assets/user-avatars/avatar_6.png"
 import avatar3 from "assets/user-avatars/avatar_7.png"
 
-import { FaHeart } from "react-icons/fa"
-
 export default [
   { id: 1, name: "Kierra Gentry", imgSrc: storyImg1, avatar: avatar1 },
   { id: 2, name: "Bradyn Kramer", imgSrc: storyImg2, avatar: avatar2 },
@@ -35,73 +33,63 @@ export const NewsData = [
   {
     id: 1,
     avatar: avatar1,
-    username: "Lurline",
+    username: "Jarret Waelchi",
     commentOn: "Smiles - 3D icons",
-    comment: "Greate work, I just purchased this product",
-    icon: <FaHeart className="news-status" />,
+    comment: "When do you release the coded that I make?",
     status: "like",
   },
   {
     id: 2,
     avatar: avatar1,
-    username: "Lurline",
+    username: "Orval Casper",
     commentOn: "Smiles - 3D icons",
-    comment: "Greate work, I just purchased this product",
-    icon: <FaHeart className="news-status" />,
+    comment: "When do you release the coded that I make?",
     status: "like",
   },
   {
     id: 3,
     avatar: avatar1,
-    username: "Lurline",
+    username: "Michel Emard",
     commentOn: "Smiles - 3D icons",
-    comment: "Greate work, I just purchased this product",
-    icon: <FaHeart className="news-status" />,
+    comment: "When do you release the coded that I make?",
+
     status: "like",
   },
   {
     id: 4,
     avatar: avatar1,
-    username: "Lurline",
+    username: "Reuben Ward",
     commentOn: "Smiles - 3D icons",
-    comment: "Greate work, I just purchased this product",
-    icon: <FaHeart className="news-status" />,
+    comment: "When do you release the coded that I make?",
+
     status: "like",
   },
   {
     id: 5,
     avatar: avatar1,
-    username: "Lurline",
+    username: "Evalyn Jenkins",
     commentOn: "Smiles - 3D icons",
-    comment: "Greate work, I just purchased this product",
-    icon: <FaHeart className="news-status" />,
-    status: "like",
-  },
-  {
-    id: 6,
-    avatar: avatar1,
-    username: "Lurline",
-    commentOn: "Smiles - 3D icons",
-    comment: "Greate work, I just purchased this product",
-    icon: <FaHeart className="news-status" />,
-    status: "like",
-  },
-  {
-    id: 7,
-    avatar: avatar1,
-    username: "Lurline",
-    commentOn: "Smiles - 3D icons",
-    comment: "Greate work, I just purchased this product",
-    icon: <FaHeart className="news-status" />,
+    comment: "When do you release the coded that I make?",
+
     status: "like",
   },
 ]
 
 export const FilterData = [
-  { id: 1, name: "Comments", status: "checked" },
-  { id: 2, name: "Likes", status: "" },
-  { id: 3, name: "Review", status: "checked" },
-  { id: 4, name: "Mentions", status: "checked" },
-  { id: 5, name: "Purchases", status: "" },
-  { id: 6, name: "Message", status: "" },
+  {
+    id: 1,
+    avatar: avatar1,
+    username: "Orval Casper",
+    commentOn: "Smiles - 3D icons",
+    comment:
+      "When do you release the coded for the Fleet - Travel kit? https://fb.com/product-link",
+  },
+  {
+    id: 2,
+    avatar: avatar1,
+    username: "Britney Beer",
+    commentOn: "Smiles - 3D icons",
+    comment:
+      "Hi @orval, thanks for contacting. Yes, I'm working on it. It would be relesed next 2 weeks. You could check the progress here: https://fb.com/progress Thank you for your patience and understanding. Regards. Britney",
+  },
 ]
