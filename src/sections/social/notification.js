@@ -13,7 +13,8 @@ import {
   Select,
   NavLink,
   Checkbox,
-  Label
+  Label,
+  Radio,
 } from "theme-ui"
 import React, { useState } from "react"
 import { FaCircle, FaEllipsisH, FaAngleDown, FaSpinner } from 'react-icons/fa'
@@ -85,6 +86,7 @@ export default function Notification() {
                         <Box sx={styles.filter.titleLeftWall}></Box>
                         <Text as="span" sx={styles.filter.titleLeft}>Filter</Text>
                     </Flex>
+
                     <Box sx={styles.filter.content}>
                         {FilterData.map((item) => (
                             <Box key={item.id} sx={styles.filter.item}>
@@ -95,10 +97,27 @@ export default function Notification() {
                             </Box>
                         ))}
                     </Box>
+
                     <Flex sx={styles.filter.select}>
                         <a className="filter-select">Select all</a>
                         <a className="filter-select">Unselect all</a>
                     </Flex>
+
+                    <Box sx={styles.filter.content}>
+                        <Box sx={styles.filter.item}>
+                            <Label sx={{ width: '100%', justifyContent: 'space-between' }}>
+                                <Text as="span" sx={styles.filter.text} className="user-type">Everyone</Text>
+                                <Radio name='person' value='false' />
+                            </Label>
+                        </Box>
+                        <Box sx={styles.filter.item}>
+                            <Label sx={{ width: '100%', justifyContent: 'space-between' }}>
+                                <Text as="span" sx={styles.filter.text} className="user-type">Customer</Text>
+                                <Radio name='person' value='false' />
+                            </Label>
+                        </Box>
+                    </Box>
+                    
                 </Card>
             </Grid>
         </Container>
@@ -310,6 +329,8 @@ const styles = {
         },
         select: {
             justifyContent: 'center',
+            pb: 5,
+            borderBottom: '1px solid #EFEFEF',
             '.filter-select': {
                 border: '2px solid #EFEFEF',
                 borderRadius: '8px',
@@ -325,7 +346,9 @@ const styles = {
                     boxShadow: '0 12px 21px rgb(134 133 255 / 16%)',
                 }
             }
+        },
+        '.user-type': {
+            color: '#6F767E',
         }
-        
     }
 }
