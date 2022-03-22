@@ -20,6 +20,11 @@ import suggest1 from "assets/social/communites/suggested/1.png"
 import suggest2 from "assets/social/communites/suggested/2.png"
 import suggest3 from "assets/social/communites/suggested/3.png"
 
+import event1 from 'assets/social/events/1.png'
+import event2 from 'assets/social/events/2.png'
+import event3 from 'assets/social/events/3.png'
+import event4 from 'assets/social/events/4.png'
+
 import { FaHeart } from "react-icons/fa"
 
 export default [
@@ -267,4 +272,42 @@ export const FriendData = [
         job: 'Works at Student',
         avatar: avatar11,
     },
+]
+
+export const UpcomingEventData = [
+    {
+        id: 1,
+        status: 'HAPPENING NOW',
+        title: 'Walmart is giving awasy $100 Gift Card',
+        creator: 'Onder Nermin',
+        imgSrc: event1,
+        userAvartar: avatar5,
+    }
+]
+
+export const PastEventData = [
+    {
+        id: 1,
+        status: 'HAPPENING NOW',
+        title: 'Medical stocks are expected to soar next week',
+        creator: 'Sancan Jessi',
+        imgSrc: event2,
+        userAvartar: avatar6,
+    },
+    {
+        id: 2,
+        status: 'HAPPENING NOW',
+        title: 'Need packers for 2nd SHIFT 1pm - 6pm',
+        creator: 'Onder Nermin',
+        imgSrc: event3,
+        userAvartar: avatar7,
+    },
+    {
+        id: 3,
+        status: 'HAPPENING NOW',
+        title: 'Private informational webinar',
+        creator: 'Onder Nermin',
+        imgSrc: event4,
+        userAvartar: avatar8,
+    }
 ]

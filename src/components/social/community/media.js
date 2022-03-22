@@ -1,36 +1,50 @@
 /** @jsx jsx */
 import router, { useRouter } from "next/router"
 import React, { useState } from "react"
-import { jsx, Box, Text, Flex } from "theme-ui"
+import { jsx, Grid, Box, Text, Flex, Card, Button, Image } from "theme-ui"
+import MediaImg from 'assets/social/medias/1.png'
 
-export default function About() {
+export default function Media() {
+
+  let items = [];
+  for (var i = 0; i < 20; i ++) {
+    items.push(MediaImg);
+  }
+
   return (
-    <Box>
-      <h2>About Me</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetiing
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a gallery of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centruies, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktp publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </p>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetiing
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a gallery of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centruies, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktp publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </p>
-    </Box>
+    <Grid sx={styles.grid}>
+      {items.map((item) => (
+        <Image src={item} sx={styles.image}></Image>
+      ))}
+        
+    </Grid>
   )
 }
 
-const styles = {}
+const styles = {
+  grid: {
+    mb: -1,
+    pt: 0,
+    gridGap: [
+      "10px 5px",
+    ],
+    gridTemplateColumns: [
+      "repeat(1, 1fr)",
+      "repeat(1, 1fr 1fr)",
+      null,
+      null,
+      null,
+      null,
+      "repeat(1, 1fr 1fr 1fr)",
+      "repeat(1, 1fr 1fr 1fr 1fr)",
+    ],
+  },
+  image: {
+    width: [ null, null, '100%', null, null, null, '220px' ],
+    height: [ null, null, '100%', null, null, null, '220px' ],
+    objectFit: 'cover',
+    borderRadius: '10px',
+  }
+}
+
+// width: [ null, null, '100%', null, null, null, '192px' ],
