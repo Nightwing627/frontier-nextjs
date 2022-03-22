@@ -7,6 +7,15 @@ import avatar2 from "assets/user-avatars/avatar_6.png"
 import avatar3 from "assets/user-avatars/avatar_7.png"
 import avatar4 from "assets/user-avatars/avatar_8.png"
 
+import avatar5 from "assets/user-avatars/avatar_1.png"
+import avatar6 from "assets/user-avatars/avatar_2.png"
+import avatar7 from "assets/user-avatars/avatar_3.png"
+import avatar8 from "assets/user-avatars/avatar_4.png"
+
+import avatar9 from "assets/user-avatars/avatar_9.png"
+import avatar10 from "assets/user-avatars/avatar_10.png"
+import avatar11 from "assets/user-avatars/avatar_11.png"
+
 import suggest1 from "assets/social/communites/suggested/1.png"
 import suggest2 from "assets/social/communites/suggested/2.png"
 import suggest3 from "assets/social/communites/suggested/3.png"
@@ -213,4 +222,49 @@ export const SuggestData = [
       user3: avatar3,
     },
   },
+]
+
+export const AdminData = [
+    {
+        id: 1,
+        role: 'Admin',
+        position: 'Product Designer at TrendyTheme',
+        userImage: avatar5,
+        userName: 'Thomas Ben',
+    },
+    {
+        id: 2,
+        role: 'Moderator',
+        position: 'Product Designer at TrendyTheme',
+        userImage: avatar6,
+        userName: 'Thomas Ben',
+    },
+    {
+        id: 3,
+        role: 'Admin',
+        position: 'Product Designer at TrendyTheme',
+        userImage: avatar7,
+        userName: 'Thomas Ben',
+    },
+]
+
+export const FriendData = [
+    {
+        id: 1,
+        userName: 'Lydia Albert',
+        job: 'Monipur High School (MUB)',
+        avatar: avatar9,
+    },
+    {
+        id: 2,
+        userName: 'Okiemute Emmanuel Sagbodje',
+        job: 'UI & UX Designer at TwinBit Limited',
+        avatar: avatar10,
+    },
+    {
+        id: 3,
+        userName: 'Obinna Che Che',
+        job: 'Works at Student',
+        avatar: avatar11,
+    },
 ]
