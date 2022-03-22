@@ -10,13 +10,17 @@ import {
   Button,
   Grid,
   Card,
-  NavLink,
-  Checkbox,
-  Label,
-  Radio,
+  Input,
 } from "theme-ui"
 import React, { useState } from "react"
-import { FaCircle, FaEllipsisH, FaAngleDown, FaSpinner } from "react-icons/fa"
+import {
+  FaCircle,
+  FaEllipsisH,
+  FaAngleDown,
+  FaSpinner,
+  FaSearch,
+} from "react-icons/fa"
+import { FiFilePlus, FiSmile } from "react-icons/fi"
 import { NewsData, FilterData } from "./social.chat.data"
 
 export default function Chat() {
@@ -52,10 +56,29 @@ export default function Chat() {
               </Flex>
             ))}
           </Box>
+          <Flex
+            sx={{
+              alignItems: "center",
+              bg: "#F4F4F4",
+              borderRadius: "12px",
+            }}
+          >
+            <FaSearch sx={{ m: "0 5px 0 15px", color: "#6F767E" }} />
+            <Input
+              placeholder="Search message"
+              sx={{
+                bg: "transparent",
+                border: "none",
+                outline: "none",
+                boxShadow: "none !important",
+                height: "initial",
+              }}
+            />
+          </Flex>
         </Card>
 
         <Card sx={styles.chatContent}>
-          <Box>
+          <Box sx={{ margin: "24px" }}>
             <Flex sx={{ justifyContent: "space-between" }}>
               <Text sx={{ fontSize: "20px", fontWeight: "bold" }}>
                 Orval Casper
@@ -68,7 +91,13 @@ export default function Chat() {
               Friend since: Sep 2021
             </Text>
           </Box>
-          <Box sx={{ bg: "#FCFCFC" }}>
+          <Box
+            sx={{
+              bg: "#FCFCFC",
+              p: "24px",
+              border: "1px solid rgba(239, 239, 239, 1)",
+            }}
+          >
             <Flex sx={styles.newsItem.loadMore}>
               <Button sx={styles.newsItem.loadMore.btn}>
                 <FaSpinner sx={{ mr: 1 }} /> Load More
@@ -81,7 +110,7 @@ export default function Chat() {
                     <Flex sx={{ width: "90px !important" }}>
                       <Image src={item.avatar} sx={styles.newsItem.avatar} />
                     </Flex>
-                    <Box sx={{ ml: 3 }}>
+                    <Box sx={{ width: "100%" }}>
                       <Text as="span" sx={styles.newsItem.textNormal}>
                         {item.username}
                       </Text>
@@ -93,6 +122,34 @@ export default function Chat() {
                   </Flex>
                 </Flex>
               ))}
+              <Flex>
+                <Button sx={styles.chat_snd_btn}>
+                  <FiFilePlus sx={{ color: "#6F767E" }} />
+                </Button>
+                <Button sx={styles.chat_snd_btn}>
+                  <FiSmile sx={{ color: "#6F767E" }} />
+                </Button>
+                <Flex
+                  sx={{
+                    alignItems: "center",
+                    bg: "#F4F4F4",
+                    borderRadius: "12px",
+                    width: "100%",
+                  }}
+                >
+                  <Input
+                    placeholder="Search message"
+                    sx={{
+                      bg: "transparent",
+                      border: "none",
+                      outline: "none",
+                      boxShadow: "none !important",
+                      height: "initial",
+                    }}
+                  />
+                  <Button sx={styles.chat_send}>Send</Button>
+                </Flex>
+              </Flex>
             </Box>
           </Box>
         </Card>
@@ -104,7 +161,7 @@ export default function Chat() {
 const styles = {
   contain: {
     mt: 4,
-    ml: 3,
+    ml: 1,
     p: "32px 34px !important",
     bg: "white",
     border: "1.5px solid #F1F2F6",
@@ -136,7 +193,7 @@ const styles = {
   chatContent: {
     bg: "#F4F4F4",
     borderRadius: "8px",
-    p: "24px",
+    p: "0",
   },
   news: { mt: 6 },
   newsItem: {
@@ -144,8 +201,8 @@ const styles = {
     fontSize: "15px",
     fontWeight: "500",
     lineHeight: "24px",
-    pl: 2,
-    pb: 6,
+    pt: 5,
+
     justifyContent: "space-between",
     avatar: {
       width: "60px",
@@ -153,24 +210,24 @@ const styles = {
       objectFit: "cover",
       borderRadius: "50%",
     },
-    tip: {
-      background: "#FF6A55",
-      padding: "8px",
-      width: "30px",
-      height: "30px",
-      borderRadius: "50%",
-      border: "2px solid white",
-      color: "white",
-      position: "absolute",
-      mt: "33px",
-      ml: "40px",
-      ".news-status": {
-        fontSize: "16px",
-        bottom: "16%",
-        position: "absolute",
-        left: "20%",
-      },
-    },
+    // tip: {
+    //   background: "#FF6A55",
+    //   padding: "8px",
+    //   width: "30px",
+    //   height: "30px",
+    //   borderRadius: "50%",
+    //   border: "2px solid white",
+    //   color: "white",
+    //   position: "absolute",
+    //   mt: "33px",
+    //   ml: "40px",
+    //   ".news-status": {
+    //     fontSize: "16px",
+    //     bottom: "16%",
+    //     position: "absolute",
+    //     left: "20%",
+    //   },
+    // },
     textNormal: {
       color: "#1A1D1F",
       fontFamily: "poppins-bold",
@@ -214,5 +271,18 @@ const styles = {
         "&:hover": { boxShadow: "none" },
       },
     },
+  },
+  chat_snd_btn: {
+    bg: "transparent",
+    fontSize: "18px",
+    boxShadow: "none",
+    p: "15px !important",
+    boxShadow: "none !important",
+  },
+  chat_send: {
+    pl: "25px !important",
+    bg: "rgba(91, 110, 245, 1)",
+    borderRadius: "8px",
+    fontSize: "13px !important",
   },
 }
