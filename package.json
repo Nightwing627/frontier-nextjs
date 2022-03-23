@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3003",
+    "dev": "next dev -p 80 --hostname 54.183.136.247",
     "build": "next build",
     "serve": "next start",
     "export": "next export",
