@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Image, Box, Heading, Text, Card, Progress, Flex } from 'theme-ui';
+import { useRouter } from 'next/router'
 import Rating from 'components/rating';
 import { FaCircle } from 'react-icons/fa';
 import Group from 'assets/group.png'
@@ -8,15 +9,29 @@ import Calendar from 'assets/calendar.png'
 export default function FeatureCardColumn({
   data: { type, title, imgSrc, altText, process, raised, days, user}
 ,}) {
+  const router = useRouter();
+
   return (
     <Card sx={styles.CardBox}>
       <>
-        <Image src={imgSrc} alt={altText} sx={{ width: '100%' }} />
+        <Image 
+          src={imgSrc}
+          alt={altText}
+          sx={{ width: '100%', cursor: 'pointer' }}
+          onClick={() => {router.push('/explore/detail')}} />
       </>
       <Box sx={styles.CardBox.card}>
-        <Text as="p" sx={styles.CardBox.type}>{type}</Text>
-        <Heading as="p" sx={styles.CardBox.heading}>
-          {title} </Heading>
+        <Text
+          as="p"
+          sx={styles.CardBox.type}
+          >
+            {type}</Text>
+        <Heading 
+          as="p"
+          sx={styles.CardBox.heading}
+          onClick={() => {router.push('/explore/detail')}}
+          >
+            {title} </Heading>
           <Progress sx={styles.CardBox.progress} max={100} value={process}>
           </Progress>
         <Box sx={styles.CardBox.wrapper}>
@@ -92,6 +107,7 @@ const styles = {
       fontFamily: 'mazzard-h-bold',
       fontSize: '22px',
       mt: 1,
+      cursor: 'pointer'
     },
     progress: {
       height: '12px',
