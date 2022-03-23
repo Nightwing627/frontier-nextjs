@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://startup-app-modern.vercel.app',
+  siteUrl: 'https://frontier001.heroku.app',
   generateRobotsTxt: true,
   // optional
   // robotsTxtOptions: {

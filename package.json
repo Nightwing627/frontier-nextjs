@@ -1,13 +1,15 @@
 {
-  "name": "@landing/004-next",
+  "name": "Frontier",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3003 --hostname 54.183.136.247",
+    "dev": "next",
     "build": "next build",
     "serve": "next start",
     "export": "next export",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "start": "next start -p 80",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -25,6 +27,7 @@
     "react-dom": "16.13.0",
     "react-ga": "^3.1.2",
     "react-icons": "^3.10.0",
+    "react-modal": "^3.14.4",
     "react-modal-video": "1.2.6",
     "react-multi-carousel": "^2.5.5",
     "react-responsive-carousel": "^3.2.23",

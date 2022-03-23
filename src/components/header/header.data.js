@@ -22,23 +22,11 @@ export const otherItems = [
     link: "/home"
   },
   {
-    label: 'Explore_2',
+    label: 'Explore',
     link: "/explore"
   },
   {
-    label: 'Detail',
-    link: "/explore/detail"
-  },
-  {
-    label: 'Social',
-    link: "/social"
-  },
-  {
-    label: 'Notification',
-    link: "/social/notification"
-  },
-  {
-    label: 'Notification_2',
+    label: 'Social_Noti_v2',
     link: "/social/notification_2"
   }
 ]
