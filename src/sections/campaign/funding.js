@@ -1,87 +1,82 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import {Select, Box, Input, Textarea, Button, Image, Grid} from 'theme-ui';
-import router, {useRouter} from 'next/router';
-import {IoIosArrowDown} from 'react-icons/io'
+import { Box, Input, Text, Button, Image, Grid, Flex} from 'theme-ui';
+import React, { useState } from 'react';
+import {
+    IoMdAddCircleOutline
+} from 'react-icons/io'
 import CampaignLayout from "../../components/campaign/layout";
 import Textgroup from "../../components/campaign/campaign-text-group";
-import featuredImage from  "assets/campaign/basic_feature.png";
+import FixedType from "./funding/fixed";
+import FlexibleType from "./funding/flexible";
 
 const text = {
-    basicTitle: "Basics",
-    basicContent: `Make a good basic impression: introduce your campaign objectives and entice people to 
-        learn more. This basic information will represent your campaign on your campaign page, 
-        on your campaign card, and in searches.`,
-    campaignTitle: 'Campaign Title *',
-    campaignContent: 'What is your campaign?',
-    taglineTitle: 'Campaign Tagline *',
-    taglineContent: 'Provide a short description that best describes your campaign to your audience',
-    featureTitle: 'Featured Image *',
-    featureContent: ['Upload a square image that represents your campaign.', <br></br>, 
-        '640 x 640 recommended resolution, 220 x 220 minimum resolution.'],
-    categoryTitle: 'Category *',
-    categoryContent: 'To help backers find your campaign, select a category that best represents your project.',
-    tagsTitle: 'Tags *',
-    tagsContent: `Enter up to five keywords that best describe your campaign. These tags will help with 
-        organization and discoverability.`,
-    durationTitle: 'Campaign Duration *',
-    durationContent: `How many days will you be running your campaign for? You can run a campaign for any 
-        number of days, with a 60 day duration maximum.`,
+    fudingTitle: "Funding Type ",
+    fudingCotent: ['Indiegogo offers two funding types: \
+        Flexible Funding (keep what you raise) and Fixed Funding (all-or-nothing).', 
+        <b key={1} sx={{color: '#5B6EF5'}}>Learn about the differences and the pricing for each.</b>],    
+    recipientTitle: ['Funds Recipient Verification ', 
+        <b key={5} sx={{
+            color: '#969696',
+            padding: '5px 5px', 
+            border: '1px solid #969696', 
+            borderRadius: '3px',
+            fontWeight: 400,
+            fontSize: '14px',
+            ml: '10px',
+            '@media screen and (max-width:736px)': {
+                display: 'none',
+            },
+        }}>NOT VERIFED</b>],
+    recipientContent: 'The campaign owner must be verified to launch the campaign. ID verification \
+        will be done securely with a third party and creates a more trusted platform for you and your backers.',
+    walletTitle: 'Wallet Address',
+    walletContent: 'The campaign owner must be verified to launch the campaign. ID verification will be done \
+        securely with a third party and creates a more trusted platform for you and your backers.',
 }
 
-export default function Basic() {
-    const router = useRouter()
+export default function Funding() {
+    const [isFlexible, setIsFlexible] = useState(true);
+    const handleSetVideo = (e, videoState) => {
+        setIsFlexible(videoState);
+    }
     return (
-        <section sx={styles.section} id="basic">
+        <section sx={styles.section} id="content">
             <CampaignLayout>   
                 <Box sx={styles.commonFont}>
-                    <Textgroup title={text.basicTitle} content={text.basicContent} />
                     <Box>
-                        <Textgroup title={text.campaignTitle} content={text.campaignContent} />
-                        <Input sx={styles.input} placeholder={'My Campaign Title'} />
+                        <Textgroup title={text.fudingTitle} content={text.fudingCotent} />
+                        <Flex sx={styles.video_image_button}>
+                            <Button 
+                                sx={isFlexible ? styles.button : styles.image_button}
+                                onClick={(e) => handleSetVideo(e, true)}
+                            >
+                                Flexible Funding
+                            </Button>
+                            <Button 
+                                sx={isFlexible ? styles.image_button : styles.button}
+                                onClick={(e) => handleSetVideo(e, false)}
+                            >
+                                Fixed Funding
+                            </Button>
+                        </Flex>
+                    </Box>                    
+                    <Box>
+                        {   isFlexible ? 
+                            <FixedType /> :
+                            <FlexibleType /> 
+                        }       
                     </Box>
+                    <hr sx={styles.hr}></hr>
                     <Box>
-                        <Textgroup title={text.taglineTitle} content={text.taglineContent} />
-                        <Textarea sx={styles.textarea} placeholder={'Enter description here'} />   
+                        <Textgroup title={text.recipientTitle} content={text.recipientContent} />
+                        <Button sx={styles.verifyButton}>Verify Your ID</Button>
                     </Box>
+                    <hr sx={styles.hr}></hr>
                     <Box>
-                        <Textgroup title={text.featureTitle} content={text.featureContent} />
-                        <Box sx={styles.feature}>
-                            <Image src={featuredImage} sx={styles.mainImage} />
-                        </Box>
+                        <Textgroup title={text.walletTitle} content={text.walletContent} />
+                        <Input sx={styles.input} />
                     </Box>
-                    <Box>
-                        <Textgroup title={text.categoryTitle} content={text.categoryContent} />
-                        <Select
-                            arrow={
-                            <IoIosArrowDown />
-                            }
-                            sx={styles.select}
-                        >
-                            <option>Select a Category</option>
-                            <option>Hi</option>
-                            <option>Beep</option>
-                            <option>Boop</option>
-                        </Select>
-                    </Box>
-                    <Box>
-                        <Textgroup title={text.tagsTitle} content={text.tagsContent} />
-                        <Select
-                            arrow={
-                            <IoIosArrowDown />
-                            }
-                            sx={styles.select}
-                        >
-                            <option>Enter a few tags</option>
-                            <option>Hi</option>
-                            <option>Beep</option>
-                            <option>Boop</option>
-                        </Select>
-                    </Box>
-                    <Box>
-                        <Textgroup title={text.durationTitle} content={text.durationContent} />
-                        <Input sx={styles.input} placeholder={''} />
-                    </Box>     
                     <Box>
                         <Grid sx={styles.grid}>
                             <Button sx={styles.button_back}>Back</Button>
@@ -102,36 +97,21 @@ const styles = {
     commonFont: {
         variant: 'section.fonts',
     },
-    mainImage: {
-        width: '100%',
+    title: {
+        fontSize: [null, null, null, null, null, null, '20px', '24px'],
+        pt: '15px',
+        fontWeight: 700,
+        lineHeight: '24px',
+        color: '#203758'
     },
-    feature: {
-        py: '14px'
+    hr: {
+        mt: '25px'
     },
     input: {
         border: '2px solid #989898',
         py: '13px',
         mt: '15px',
         mb: '8px'
-    },
-    textarea: {
-        border: '2px solid #989898',
-        py: '13px',
-        mt: '15px',
-        mb: '8px',
-        borderRadius: '8px',
-        height: '126px',
-        fontSize: '15px'
-    },
-    startCampaign: {
-        pt: '25px',
-        pb: '200px'
-    },
-    select: {
-        color: '#989898',
-        border: '2px solid #989898',
-        mt: '22px',
-        mb: '6px'
     },
     button: {
         width: '100%',
@@ -142,6 +122,16 @@ const styles = {
         fontWeight: 500,
         fontStyle: 'normal'
     },
+    verifyButton: {
+        width: '196px',
+        borderRadius: '7px',
+        fontWeight: 'normal',
+        fontSize: '18px !important',
+        fontFamily: 'DM Sans',
+        fontWeight: 500,
+        fontStyle: 'normal',
+        mt: '14px'
+    },
     button_back: {
         width: '100%',
         borderRadius: '7px',
@@ -150,11 +140,34 @@ const styles = {
         fontFamily: 'DM Sans',
         fontWeight: 500,
         fontStyle: 'normal',
-        bg: '#B4B4B4'
+        bg: '#B4B4B4 !important',
+        color: 'white',
+    },
+    image_button: {
+        width: '100%',
+        borderRadius: '7px',
+        fontWeight: 'normal',
+        fontSize: '18px !important',
+        fontFamily: 'DM Sans',
+        fontWeight: 500,
+        fontStyle: 'normal',
+        bg: '#F4F5F7 !important',
+        color: 'black',
+        boxShadow: 'none',
+    },
+    video_image_button: {
+        width: "420px",
+        padding: "7px 8px",
+        bg: "#F4F5F7",
+        borderRadius: "7px",
+        mt: '15px',   
+        '@media screen and (max-width:736px)': {
+            display: 'block',
+            width: '260px'
+        },
     },
     grid: {
-        pt: '26px',
-        pb: ['20px', '20px', null, null, null, null, '200px', '200px'],
+        py: '26px',
         gridGap: [
         '13px 0',
         null,

@@ -17,7 +17,7 @@ const text = {
 export default function Basic() {
     const router = useRouter();
     return (
-        <section sx={styles.section} id="basic">
+        <section sx={styles.section} id="perk">
             <CampaignLayout>   
                 <Box sx={styles.commonFont}>
                     <Textgroup title={text.createTitle} content={text.createContent} />

@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import {Box, Input, Text, Button, Image, Grid, Label, Radio, Textarea} from 'theme-ui';
+import {Box, Input, Text, Button, Image, Grid, Label, Radio, Textarea, Flex} from 'theme-ui';
 import React, { useState } from 'react';
 import {
     IoMdAddCircleOutline
-} from 'react-icons/io'
+} from 'react-icons/io';
+import {AiOutlineCloseCircle} from 'react-icons/ai';
+import Modal from 'react-modal';
 import CampaignLayout from "../../components/campaign/layout";
 import Textgroup from "../../components/campaign/campaign-text-group";
 import perkImage from  "assets/campaign/basic_feature.png";
@@ -13,7 +15,7 @@ const text = {
     perkTitle: "Perk Details",
     perkContent: ['Perks are incentives to backers in exchange for their support. \
         Make sure your perks are not ', 
-        <b sx={{color: 'black'}}>prohibited.</b>, 
+        <b key={1} sx={{color: 'black'}}>prohibited.</b>, 
         ' Learn more about perks in the help center.'],
     visibilityTitle: 'Visibility',
     visibilityContent: 'You can change the visibility of your perks at any time. \
@@ -46,13 +48,52 @@ const text = {
     shippingContent: 'Estimate a delivery date for this perk for your backers. \
         This date and future changes to it will appear on the perk card for your backers to see. \
         We recommend that you post an update to backers whenever you change this date.',
+
+    modalItemTitle: 'Item Name *',
+    modalItemContent: 'Use a concise and obvious name for the item.',
+    modalOptionTitle: 'Options',
+    modalOptionContent: 'Do you have options that backers can choose from for this item, e.g., color, size, etc.? \
+        This will create SKUs that you can use later to help with fulfillment.'
 }
 
-export default function Content() {
+const options = [
+    {
+        name: '',
+        value: ''
+    }
+]
+
+export default function CreatePerkPage() {
+    const [optionAmount, setOptionAmount] = useState(1);
     const [checkeddark, setCheckedDark] = useState(true)
     const [checkedlight, setCheckedLight] = useState(false)
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    const openModal = () => {
+        setIsOpen(true);
+    }
+
+    const closeModal = () => {
+        setIsOpen(false);
+    }
+
+    const addOption = (e) => {
+        e.preventDefault();
+        options.push({
+            name: '',
+            value: ''
+        });
+        setOptionAmount(optionAmount + 1);
+    }
+
+    const closeCustomOption = (e, key) => {
+        e.preventDefault();
+        options.splice(key, 1);
+        setOptionAmount(optionAmount - 1);
+    }
+
     return (
-        <section sx={styles.section} id="basic">
+        <section sx={styles.section} id="createPerk">
             <CampaignLayout>   
                 <Box sx={styles.commonFont}>
                     <Box>
@@ -89,19 +130,25 @@ export default function Content() {
                     </Box> 
                     <Box>
                         <Textgroup title={text.priceTitle} content={text.priceContent} />
-                        <Input sx={styles.input} placeholder={'$'} />
+                        <Input sx={styles.input} placeholder={text.pricePlaceholder} />
                         <Text sx={styles.title}>Retail Price</Text>
-                        <Input sx={styles.input} placeholder={'$'} />
+                        <Box sx={styles.usdtInput}>
+                            <Input sx={styles.input} placeholder={'$'} />
+                            <Text sx={styles.pricePlaceholderRight}>USDT</Text>
+                        </Box>
                         <Textgroup title={text.titleTitle} content={text.titleContent} />
-                        <Input sx={styles.input} placeholder={'$'} />
+                        <Box sx={styles.usdtInput}>
+                            <Input sx={styles.input} placeholder={'$'} />
+                            <Text sx={styles.pricePlaceholderRight}>USDT</Text>
+                        </Box>                        
                         <Text sx={styles.titleInputMark}>30</Text>
                     </Box>
                     <Box>
                         <Textgroup title={text.itemTitle} content={text.itemContent} />
-                        <Button sx={styles.addButton}>
+                        <Button sx={styles.addButton} onClick={openModal}>
                             <IoMdAddCircleOutline sx={styles.addImageIcon} />
                             <span sx={styles.addImage}>&nbsp;Add Item</span>
-                        </Button>
+                        </Button>                        
                     </Box>
                     <Box>
                         <Textgroup title={text.descriptionTitle} content={text.descriptionContent} />
@@ -155,8 +202,83 @@ export default function Content() {
                             <Button sx={styles.button_back}>Cancel</Button>
                             <Button sx={styles.button}>Save</Button>
                         </Grid>
-                    </Box>               
+                    </Box>                                        
                 </Box>
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    style={styles.modal.main}
+                >
+                    <Box>
+                        <Flex>
+                            <Text sx={styles.title}>Item</Text>
+                            <Box sx={styles.modal.modalClose} onClick={(e) => {
+                                    closeModal(e)
+                                }}>
+                                <AiOutlineCloseCircle sx={{position:'relative', float:'right', fontSize: '22px', cursor:'pointer'}} />
+                            </Box>
+                        </Flex>
+                        <Textgroup title={text.modalItemTitle} content={text.modalItemContent} />
+                        <Input sx={styles.input} placeholder={''} />
+                        <Text sx={styles.titleInputMark}>30</Text>
+                    </Box>
+                    <Box>
+                        <Textgroup title={text.modalOptionTitle} content={text.modalOptionContent} />
+                        <Label sx={styles.radioText}>
+                            <Radio
+                                name='dark-mode'
+                                value='true'
+                                defaultChecked={true}
+                                sx={{color: checkeddark ? 'black !important' : '#989898', mt: '3px'}}
+                                onChange={() => {
+                                setCheckedDark(!checkeddark)
+                                setCheckedLight(!checkedlight)
+                                }}
+                            />
+                            No, I am not offering any options for this item.
+                        </Label>
+                        <Label sx={styles.radioText}>
+                            <Radio
+                                name='dark-mode'
+                                value='false'
+                                sx={{color: checkedlight ? 'black !important' : '#989898', mt: '3px'}}
+                                onChange={() => {
+                                setCheckedDark(!checkeddark)
+                                setCheckedLight(!checkedlight)
+                                }}
+                            />
+                            Yes, This perk contains items that need to be shipped.
+                        </Label>
+                    </Box>  
+                    <Box>
+                        <Grid sx={styles.modal.grid}>
+                            <Text sx={styles.title}>Option Name</Text>
+                            <Text sx={styles.title}>Option Value</Text>
+                            <Box></Box>
+                        </Grid>
+                        {options.map((item, i) => (
+                            <Grid sx={styles.modal.grid} key={i}>
+                                <Input placeholder="name" value={item.name} onChange={(e)=>{}}/>
+                                <Input placeholder="value" value={item.value} onChange={(e)=>{}} />
+                                <Box sx={styles.modal.optionClose} onClick={(e) => {
+                                    closeCustomOption(e, i);
+                                }}>
+                                    <AiOutlineCloseCircle sx={{fontSize: '24px', cursor:'pointer', color: '#33383F'}} />
+                                </Box>                                
+                            </Grid>
+                        ))}
+                        <Button sx={styles.addButton} onClick={(e) => {addOption(e)}}>
+                            <IoMdAddCircleOutline sx={styles.addImageIcon} />
+                            <span sx={styles.addImage}>&nbsp;Add Option</span>
+                        </Button>  
+                    </Box> 
+                    <Box>
+                        <Grid sx={styles.grid}>
+                            <Button sx={styles.button_back}>Cancel</Button>
+                            <Button sx={styles.button}>Save</Button>
+                        </Grid>
+                    </Box>                           
+                </Modal>
             </CampaignLayout>
         </section>
     );
@@ -177,6 +299,16 @@ const styles = {
         lineHeight: '24px',
         color: '#203758'
     },
+    usdtInput: {
+        mb: '20px'
+    },
+    pricePlaceholderRight: {
+        textAlign: 'right',
+        pr: '2%',
+        mt: '-50px',
+        color: '#989898',
+        zIndex: -1000,
+    },
     titleInputMark: {
         fontSize: [null, null, null, null, null, null, '15px', '18px'],
         lineHeight: '30px',
@@ -196,7 +328,9 @@ const styles = {
         border: '2px solid #989898',
         py: '13px',
         mt: '15px',
-        mb: '8px'
+        mb: '8px',
+        position: 'relative',
+        zIndex: 1,
     },
     radioText: {
         fontSize: [null, null, null, null, null, null, '15px', '18px'],
@@ -265,24 +399,78 @@ const styles = {
     },
     grid: {
         pt: '26px',
+        pb: '50px',
         gridGap: [
-        '13px 0',
-        null,
-        '45px 30px',
-        null,
-        '50px 30px',
-        null,
-        null,
-        '90px 70px',
+            '13px 0',
+            null,
+            '45px 30px',
+            null,
+            '50px 30px',
+            null,
+            null,
+            '90px 70px',
         ],
         width: ['100%', '80%', '100%'],
         mx: 'auto',
         gridTemplateColumns: [
-        'repeat(1, 1fr)',
-        null,
-        'repeat(1, 1fr 1fr)',
-        null,
-        'repeat(1, 1fr 1fr)',
+            'repeat(1, 1fr)',
+            null,
+            'repeat(1, 1fr 1fr)',
+            null,
+            'repeat(1, 1fr 1fr)',
         ],
+    },
+    modal: {
+        '.modal-option-grid': {
+            pt: 0,
+        },
+        main: {
+            overlay: {
+                backgroundColor: 'rgb(0, 0, 0, 0.6)',
+                zIndex: 1002,
+            },
+            content: {
+                marginRight: ['200px', '200px'],
+            }          
+        },
+        optionClose: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        modalClose: {
+            width: '100%',
+            float: 'right',
+            pt: '18px',
+            color: '#33383F'
+        },
+        grid: {
+            pt: '26px',
+            gridGap: [
+                '13px 0',
+                null,
+                '45px 30px',
+                null,
+                '50px 30px',
+                null,
+                null,
+                '90px 70px',
+            ],
+            width: ['100%', '80%', '100%'],
+            mx: 'auto',
+            gridTemplateColumns: [
+                'repeat(1, 1fr)',
+                null,
+                'repeat(1, 7fr 7fr 1fr)',
+                null,
+                'repeat(1, 7fr 7fr 1fr)',
+            ],
+            '&:first-of-type': {
+                pt: 0,
+            },
+            '&:last-of-type': {
+                mb: '14px',
+            },
+        },
     },
 };

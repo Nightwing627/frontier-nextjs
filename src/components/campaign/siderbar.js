@@ -24,9 +24,9 @@ export default function Sidebar() {
             <ul sx={{padding: '0px 0px'}}>
                 {list.map((item, i) => (                    
                     <li key={i} onClick={(e)=> handleMainMenu(e, item.sublist.length, item.router)} sx={styles.mainlist.type}>
-                        <Flex>
+                        <Flex id={'sidebar_' + item.id} sx={ item.sublist.length == 0 ? styles.mainlist.aloneMenu : styles.mainlist.multiMenu}>
                             <Text sx={styles.mainlist.icon}>{item.icon}</Text>
-                            <Text id={'sidebar_' + item.id} sx={item.sublist.length > 0 ? styles.mainlist.multiList : styles.mainlist.aloneList}> {item.text} </Text>
+                            <Text sx={styles.mainlist.menuStyle}> {item.text} </Text>
                             {item.sublist.length > 0 ? <Text sx={styles.mainlist.icon}>{subFlag ? item.subIconUp : item.subIconDown}</Text> : "" }
                         </Flex>
                         <ul sx={subFlag ? styles.mainlist.subListActive : styles.mainlist.subListNonActive}>
@@ -53,7 +53,7 @@ const styles = {
             fontSize: '15px',
             lineHeight: '40px',
             borderRadius: '8px',
-            cursor: 'pointer'
+            cursor: 'pointer',
         },        
         sublistType: {
             paddingLeft: '10px',            
@@ -62,18 +62,26 @@ const styles = {
             "&:hover": {
                 backgroundColor: '#5B6EF5',
                 borderRadius: '8px',
+                color: 'white',
+                fontFamily: 'DM Sans',
+                fontWeight: '400'
             }
         },
-        aloneList: {
-            width: '100%',
-            pl: '10px',
+        aloneMenu: {
+            'pl': '8px',
             borderRadius: '8px',
             "&:hover": {
                 backgroundColor: '#5B6EF5',
                 borderRadius: '8px',
+                color: 'white',
+                fontFamily: 'DM Sans',
+                fontWeight: '400'
             }
         },
-        multiList : {
+        multiMenu: {
+            'pl': '8px',
+        },
+        menuStyle : {
             width: '100%',
             pl: '10px',
         },

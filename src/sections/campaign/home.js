@@ -10,13 +10,13 @@ import campainHand from 'assets/campaign/main_hand.png';
 
 const text = {
   startTitle: "Let's get ready to start your campaign !",
-  startContent: ['We want to create the best onboarding for you – please fill out the information below.', <br></br>, 
+  startContent: ['We want to create the best onboarding for you – please fill out the information below.', <br key={1}></br>, 
     'Your answers will be locked for this campaign and can’t be changed later.'],
   moneyTitle: 'Who are you asking money for?',
   moneyContent: 'Please choose the type of account that will be receiving your funds',
   locateTitle: 'Where are you located?',
-  locateContent: ['If you are raising funds as an individual, what is your country of legal residence?', <br></br>, 
-    'If you are raising funds for a business headquartered?', <br></br> ,
+  locateContent: ['If you are raising funds as an individual, what is your country of legal residence?', <br key={2}></br>, 
+    'If you are raising funds for a business headquartered?', <br key={3}></br> ,
     'Learn more about country limitations.']
 }
 
@@ -110,7 +110,8 @@ const styles = {
   },
   select: {
     color: '#989898',
-    border: '2px solid #989898'
+    border: '2px solid #989898',
+    borderRadius: '12px'
   },
   button: {
     mt: '35px',

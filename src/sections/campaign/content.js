@@ -15,15 +15,15 @@ const text = {
     pitchTitle: "Pitch Video or Image",
     pitchContent: ['Add a video or image to appear on the top of your campaign page. Campaigns with\
         videos raise 2000% more than campaigns without video. Keep your video 2-3 minutes. ', 
-        <b sx={{color: '#5B6EF5'}}>Learn how to make a great video</b>],
+        <b key={1} sx={{color: '#5B6EF5'}}>Learn how to make a great video</b>],
     videoTitle: 'Video URL *',
     videoContent: ['Enter a YouTube or Vimeo URL to appear at the top of your campaign page.\
-    Make sure your video has closed captioning enabled on ', <b sx={{color: '#5B6EF5'}}>Youtube</b>,
-    ' or ', <b sx={{color: '#5B6EF5'}}>Vimeo</b>],
+    Make sure your video has closed captioning enabled on ', <b key={2} sx={{color: '#5B6EF5'}}>Youtube</b>,
+    ' or ', <b key={3} sx={{color: '#5B6EF5'}}>Vimeo</b>],
     storyTitle: 'Story *',
     storyContent: ['Tell potential contributors more about your campaign. \
         Provide details that will motivate people to contribute. \
-        A good pitch is compelling, informative, and easy to digest. ', <br></br>, 
+        A good pitch is compelling, informative, and easy to digest. ', <br key={4}></br>, 
         'Add more images related to your campaign. \
         These will show up as additional selectable images under your pitch \
         video or image at the top of your campaign page. '],
@@ -39,7 +39,7 @@ export default function Content() {
         setIsVideo(videoState);
     }
     return (
-        <section sx={styles.section} id="basic">
+        <section sx={styles.section} id="content">
             <CampaignLayout>   
                 <Box sx={styles.commonFont}>
                     <Box>
@@ -52,7 +52,7 @@ export default function Content() {
                                 Video
                             </Button>
                             <Button 
-                                sx={isVideo ? styles.button_back : styles.image_button}
+                                sx={isVideo ? styles.image_button : styles.button}
                                 onClick={(e) => handleSetVideo(e, false)}
                             >
                                 Image
@@ -179,11 +179,15 @@ const styles = {
         fontSize: '22px'
     },
     video_image_button: {
-        width: "300px",
+        width: "420px",
         padding: "7px 8px",
         bg: "#F4F5F7",
         borderRadius: "7px",
         mt: '15px',   
+        '@media screen and (max-width:736px)': {
+            display: 'block',
+            width: '260px'
+        },
     },
     grid: {
         py: '26px',

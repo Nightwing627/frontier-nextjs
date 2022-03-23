@@ -21,7 +21,7 @@ const styles = {
     },
     contentText: {
         fontSize: [null, null, null, null, null, null, '15px', '18px'],
-        lineHeight: '30px',
+        lineHeight: '25px',
         fontWeight: 400,
         letterSpacing: '-1%',
         color: '#989898',

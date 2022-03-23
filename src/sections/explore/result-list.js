@@ -70,7 +70,8 @@ const styles = {
     p: '10px 38px',
     borderRadius: '34px',
     fontSize: '20px',
-    justifyContent: 'end'
+    justifyContent: 'end',
+    borderRadius: '12px',
   },
   searchBtn: {
     variant: "normalButton",

@@ -2,93 +2,50 @@
 import { jsx } from 'theme-ui';
 import {Select, Box, Input, Textarea, Button, Image, Grid} from 'theme-ui';
 import router, {useRouter} from 'next/router';
-import {IoIosArrowDown} from 'react-icons/io'
+import React, {useState} from 'react';
 import CampaignLayout from "../../components/campaign/layout";
-import Textgroup from "../../components/campaign/campaign-text-group";
-import featuredImage from  "assets/campaign/basic_feature.png";
+import FundingCard from './preview/funding_card';
+import UserAvatar1 from '../../assets/user-avatars/avatar_1.png';
+import Story from './preview/story';
+import Faq from './preview/faq';
+import Update from './preview/update';
+import Comment from './preview/comment';
 
-const text = {
-    basicTitle: "Basics",
-    basicContent: `Make a good basic impression: introduce your campaign objectives and entice people to 
-        learn more. This basic information will represent your campaign on your campaign page, 
-        on your campaign card, and in searches.`,
-    campaignTitle: 'Campaign Title *',
-    campaignContent: 'What is your campaign?',
-    taglineTitle: 'Campaign Tagline *',
-    taglineContent: 'Provide a short description that best describes your campaign to your audience',
-    featureTitle: 'Featured Image *',
-    featureContent: ['Upload a square image that represents your campaign.', <br></br>, 
-        '640 x 640 recommended resolution, 220 x 220 minimum resolution.'],
-    categoryTitle: 'Category *',
-    categoryContent: 'To help backers find your campaign, select a category that best represents your project.',
-    tagsTitle: 'Tags *',
-    tagsContent: `Enter up to five keywords that best describe your campaign. These tags will help with 
-        organization and discoverability.`,
-    durationTitle: 'Campaign Duration *',
-    durationContent: `How many days will you be running your campaign for? You can run a campaign for any 
-        number of days, with a 60 day duration maximum.`,
+const data = {
+    id: 1,
+    type: 'FUNDING',
+    title: 'My Campaign Title',
+    backText: '0 backers',
+    progressBottomText: ['0% of $500 ', <b key={1}>Fixed Goal</b>],
+    process: 30,
+    price: 120,
+    user: {
+        name: 'Cheyenne Curtls',
+        avatar: UserAvatar1,
+        text: 'Ask a question',
+        rate: 3,
+    },
 }
 
-export default function Basic() {
+export default function FundingCardSection() {
     const router = useRouter()
+    const [menuNumber, setMenuNumter] = useState(1)
     return (
         <section sx={styles.section} id="basic">
             <CampaignLayout>   
                 <Box sx={styles.commonFont}>
-                    <Textgroup title={text.basicTitle} content={text.basicContent} />
-                    <Box>
-                        <Textgroup title={text.campaignTitle} content={text.campaignContent} />
-                        <Input sx={styles.input} placeholder={'My Campaign Title'} />
-                    </Box>
-                    <Box>
-                        <Textgroup title={text.taglineTitle} content={text.taglineContent} />
-                        <Textarea sx={styles.textarea} placeholder={'Enter description here'} />   
-                    </Box>
-                    <Box>
-                        <Textgroup title={text.featureTitle} content={text.featureContent} />
-                        <Box sx={styles.feature}>
-                            <Image src={featuredImage} sx={styles.mainImage} />
-                        </Box>
-                    </Box>
-                    <Box>
-                        <Textgroup title={text.categoryTitle} content={text.categoryContent} />
-                        <Select
-                            arrow={
-                            <IoIosArrowDown />
-                            }
-                            sx={styles.select}
-                        >
-                            <option>Select a Category</option>
-                            <option>Hi</option>
-                            <option>Beep</option>
-                            <option>Boop</option>
-                        </Select>
-                    </Box>
-                    <Box>
-                        <Textgroup title={text.tagsTitle} content={text.tagsContent} />
-                        <Select
-                            arrow={
-                            <IoIosArrowDown />
-                            }
-                            sx={styles.select}
-                        >
-                            <option>Enter a few tags</option>
-                            <option>Hi</option>
-                            <option>Beep</option>
-                            <option>Boop</option>
-                        </Select>
-                    </Box>
-                    <Box>
-                        <Textgroup title={text.durationTitle} content={text.durationContent} />
-                        <Input sx={styles.input} placeholder={''} />
-                    </Box>     
-                    <Box>
-                        <Grid sx={styles.grid}>
-                            <Button sx={styles.button_back}>Back</Button>
-                            <Button sx={styles.button}>Save & Continue</Button>
-                        </Grid>
-                    </Box>               
+                    <FundingCard data={data} />   
                 </Box>
+                <Grid sx={styles.grid}>
+                    <Box className="preview-story" sx={menuNumber == 1 ? styles.menuActive : ""} onClick={(e) => {setMenuNumter(1)}}>STORY</Box>
+                    <Box className="preview-faq" sx={menuNumber == 2 ? styles.menuActive : ""} onClick={(e) => {setMenuNumter(2)}}>FAQ</Box>
+                    <Box className="preview-update" sx={menuNumber == 3 ? styles.menuActive : ""} onClick={(e) => {setMenuNumter(3)}}>UPDATE(28)</Box>
+                    <Box className="preview-comment" sx={menuNumber == 4 ? styles.menuActive : ""} onClick={(e) => {setMenuNumter(4)}}>COMMENTS(245)</Box>
+                </Grid>
+                {menuNumber == 1 ? <Story /> : ''}
+                {menuNumber == 2 ? <Faq /> : ''}
+                {menuNumber == 3 ? <Update /> : ''}
+                {menuNumber == 4 ? <Comment /> : ''}
             </CampaignLayout>
         </section>
     );
@@ -102,36 +59,22 @@ const styles = {
     commonFont: {
         variant: 'section.fonts',
     },
+    menuActive: {
+        color: 'black',
+        borderBottom: '2px solid black',
+        pb: '10px'
+    },
     mainImage: {
         width: '100%',
     },
     feature: {
-        py: '14px'
+        py: '26px'
     },
     input: {
         border: '2px solid #989898',
         py: '13px',
         mt: '15px',
         mb: '8px'
-    },
-    textarea: {
-        border: '2px solid #989898',
-        py: '13px',
-        mt: '15px',
-        mb: '8px',
-        borderRadius: '8px',
-        height: '126px',
-        fontSize: '15px'
-    },
-    startCampaign: {
-        pt: '25px',
-        pb: '200px'
-    },
-    select: {
-        color: '#989898',
-        border: '2px solid #989898',
-        mt: '22px',
-        mb: '6px'
     },
     button: {
         width: '100%',
@@ -153,8 +96,25 @@ const styles = {
         bg: '#B4B4B4'
     },
     grid: {
-        pt: '26px',
-        pb: ['20px', '20px', null, null, null, null, '200px', '200px'],
+        '.preview-story' : {
+            width: ['40%', '28%', '38%', '37%', '100%', '90%', '70%'],
+        },
+        '.preview-faq' : {
+            width: ['25%', '20%', '30%', '70%', '65%', '55%', '55%'],
+        },
+        '.preview-update' : {
+            width: ['77%', '58%', '76%', '60%', '91%', '77%', '68%'],
+        },
+        '.preview-comment' : {
+            width: ['100%', '65%', '100%', '74%', '82%', '77%', '62%'],
+        },
+        fontSize: '18px',
+        fontFamily: 'mazzard-h-bold',
+        fontWeight: 700, 
+        cursor: 'pointer',
+        color: '#717579',
+        pt: '15px',
+        pb: ['20px', '20px', null, null, null, null, '20px', '20px'],
         gridGap: [
         '13px 0',
         null,
@@ -168,11 +128,11 @@ const styles = {
         width: ['100%', '80%', '100%'],
         mx: 'auto',
         gridTemplateColumns: [
-        'repeat(1, 1fr)',
-        null,
-        'repeat(1, 1fr 1fr)',
-        null,
-        'repeat(1, 1fr 1fr)',
+            'repeat(1, 1fr 1fr)',
+            null,
+            'repeat(1, 1fr 1fr 1fr 1fr)',
+            null,
+            'repeat(1, 1fr 1fr 2fr 3fr)',
         ],
     },
 };
