@@ -56,7 +56,7 @@ const styles = {
       "repeat(1, 1fr)",
       null,
       null,
-      "repeat(1, 20% 80%)",
+      "repeat(1, 22% 70%)",
     ],
   },
 }

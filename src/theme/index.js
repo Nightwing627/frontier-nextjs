@@ -15,6 +15,7 @@ export default {
     accent: '#609', // a contrast color for emphasizing UI
     yellow: '#F6C416',
     section_bg_color: '#F4F5F7',
+    social_text: '#203758',
     // highlight	a background color for highlighting text
     modes: {
       dark: {

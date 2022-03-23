@@ -14,7 +14,7 @@ import MobileDrawer from "./mobile-drawer"
 import menuItems, { otherItems } from "./header.data"
 
 export default function Header({ className }) {
-  const pathname = useRouter().pathname
+  const pathname = useRouter()
   const router = useRouter()
 
   return (
@@ -210,14 +210,7 @@ const styles = {
         },
       },
     },
-    ".nav__submenu": {
-      fontWeight: 300,
-      textTransform: "none",
-      display: "none",
-      position: "absolute",
-      width: "max-content",
-      bg: "white",
-    },
+ 
     ".nav__submenu-item": {
       "&:hover": {
         background: "rgba(#000, 0.1)",

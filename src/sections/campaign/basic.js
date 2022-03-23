@@ -79,7 +79,7 @@ export default function Basic() {
                     <Box>
                         <Textgroup title={text.durationTitle} content={text.durationContent} />
                         <Input sx={styles.input} placeholder={''} />
-                    </Box>     
+                    </Box>
                     <Box>
                         <Grid sx={styles.grid}>
                             <Button sx={styles.button_back}>Back</Button>

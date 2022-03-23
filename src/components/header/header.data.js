@@ -34,11 +34,11 @@ export const otherItems = [
     link: "/social"
   },
   {
-    label: 'Notification V1',
-    link: "/notification_1"
+    label: 'Notification',
+    link: "/social/notification"
   },
   {
-    label: 'Notification V2',
-    link: "/notification_2"
+    label: 'Notification_2',
+    link: "/social/notification_2"
   }
 ]

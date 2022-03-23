@@ -13,12 +13,14 @@ import {
 } from "theme-ui"
 import React, { useState } from "react"
 import { FiTwitter, FiInstagram } from "react-icons/fi"
+import { CgChevronDown } from "react-icons/cg"
 import { FaPinterestP } from "react-icons/fa"
 import { BsDot, BsFunnel } from "react-icons/bs"
 import Socialbg from "assets/socialbg.jpg"
 import Avatar1 from "assets/user-avatars/avatar.png"
 
 import Posts from "../../components/social/profile/posts"
+import Campaigns from "../../components/social/profile/campaigns"
 // import Contributions from "../../components/social/profile/contributions"
 import About from "../../components/social/profile/about"
 
@@ -157,11 +159,13 @@ export default function Profilepage() {
                 </Button>
               </Box>
               <Box sx={isAbout ? styles.hide : { display: "flex" }}>
-                <Select defaultValue="Most Recent">
-                  <option>Most Recent</option>
-                  <option>Most Old</option>
-                </Select>
-                <Button>
+                <Button
+                  sx={isAbout ? styles.active : styles.social_select}
+                  // onClick={IsSocialSelect}
+                >
+                  Most Recent <CgChevronDown />
+                </Button>
+                <Button sx={isAbout ? styles.active : styles.social_select}>
                   <BsFunnel />
                 </Button>
               </Box>
@@ -169,13 +173,13 @@ export default function Profilepage() {
             <Card sx={isPost ? [] : styles.hide}>
               <Posts />
             </Card>
-            {/* <Card>
+            <Card sx={isCampaigns ? [] : styles.hide}>
               <Campaigns />
-            </Card> */}
-            {/* <Card>
+            </Card>
+            {/* <Card sx={isContributions ? [] : styles.hide}>
               <Contributions />
             </Card> */}
-            {/* <Card>
+            {/* <Card sx={isReferrals ? [] : styles.hide}>
               <Referrals />
             </Card> */}
             <Card sx={isAbout ? [] : styles.hide}>
@@ -282,6 +286,17 @@ const styles = {
   social_navbtn: {
     background: "rgba(252, 252, 252, 1)",
     color: "rgba(111, 118, 126, 1)",
+    borderRadius: "8px",
+    marginRight: "8px",
+    fontSize: "15px !important",
+    padding: "8px 16px !important",
+  },
+  social_select: {
+    display: "flex",
+    alignItems: "center",
+    background: "rgba(244, 245, 247, 1)",
+    color: "rgba(111, 118, 126, 1)",
+    border: "2px solid rgba(239, 239, 239, 1)",
     borderRadius: "8px",
     marginRight: "8px",
     fontSize: "15px !important",

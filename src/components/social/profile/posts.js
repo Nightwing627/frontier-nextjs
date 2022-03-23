@@ -155,7 +155,7 @@ const styles = {
       "repeat(1, 1fr)",
       null,
       null,
-      "repeat(1, 65% 35%)",
+      "repeat(1, 60% 35%)",
     ],
     mainImg: {
       borderRadius: "10px",
@@ -184,7 +184,7 @@ const styles = {
         borderRadius: "50%",
       },
       username: {
-        color: "#203758",
+        color: "social_text",
         fontFamily: "mazzard-h-bold",
         fontSize: "18px",
       },
